@@ -26,8 +26,8 @@
 			</div>
 
 			<div>
-				<span class="float:left">주문일 : regdate </span> <a href=""
-					style="float: right">주문 상세보기</a>
+				<span class="float:left">주문일 : regdate </span>
+					<a href="orderdetail.do" style="float: right">주문 상세보기</a>
 			</div>
 			<hr />
 
