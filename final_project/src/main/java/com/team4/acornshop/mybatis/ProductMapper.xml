@@ -7,7 +7,6 @@
 		VALUES(product_seq.NEXTVAL, #{pCategory}, #{pTitle},
 			#{pPrice}, #{pMainImage}, #{pContent},#{pImage1},#{pImage2},#{pImage3},#{pImage4},#{pIsUsed},#{pStock} ,SYSDATE)
 	</insert>
-	
 	<select id="getList" parameterType="productDto" resultType="productDto">
 		SELECT result1.*
 		FROM
