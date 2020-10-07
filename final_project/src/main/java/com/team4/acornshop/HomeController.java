@@ -32,6 +32,12 @@ public class HomeController {
 	
 		return "mypage/product";
 	}
+	
+	@RequestMapping("/mypage/orderdetail.do")
+	public String orderdetail() {
+	
+		return "mypage/orderdetail";
+	}
 
 
 }
