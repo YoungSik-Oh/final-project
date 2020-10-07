@@ -18,7 +18,7 @@
 			<div class="col mb-4">
 				<div class="card">
 					<div class="card-body">
-						<h5 class="card-title">개인정보 관리</h5>
+						<a href="${pageContext.request.contextPath }/users/private/myPage.do"><h5 class="card-title">개인정보 관리</h5></a>
 						<p class="card-text">내 개인 정보를 관리합니다.</p>
 					</div>
 				</div>
@@ -55,10 +55,38 @@
 					</div>
 				</div>
 			</div>
+			<div class="col mb-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">
+							<a href="#">쿠폰</a>
+						</h5>
+						<p class="card-text">쿠폰등록 및 사용내역을 확인 할 수 있습니다.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col mb-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">
+							<a href="#">CASH</a>
+						</h5>
+						<p class="card-text">CASH충전 및 사용내역을 확인 할 수 있습니다.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col mb-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">
+							<a href="orderdetail.do">주문상세</a>
+						</h5>
+						<p class="card-text">주문상세내역 확인</p>
+					</div>
+				</div>
+			</div>
 		</div>
-
 		<h1 class="text-center">footer 부분</h1>
-
 	</div>
 </body>
 </html>
