@@ -13,7 +13,6 @@
 		<h1>header 부분</h1>
 		<h1>MY PAGE</h1>
 	</div>
-	
 	<div class="row row-cols-1 row-cols-md-2 text-center">
 	  <div class="col mb-4">
 	    <div class="card">
@@ -34,7 +33,7 @@
 	  <div class="col mb-4">
 	    <div class="card">
 	      <div class="card-body">
-	        <h5 class="card-title"><a href="product.do">내가 올린 상품</a> </h5>
+	        <h5 class="card-title"><a href="${pageContext.request.contextPath}/product/productdetail.do">내가 올린 상품</a> </h5>
 	        <p class="card-text">내가 올린 상품을 확인 할 수 있습니다.</p>
 	      </div>
 	    </div>
