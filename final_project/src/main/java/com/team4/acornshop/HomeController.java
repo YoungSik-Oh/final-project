@@ -8,11 +8,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 	
 	
-	@RequestMapping("/main.do")
+	@RequestMapping("/main")
 	public String home() {
 	
 		
 		return "main";
 	}
 	
+	@RequestMapping("/naverLogin")
+	public String naverLogin() {
+		return "naverLogin";
+	}
+	
+	@RequestMapping("/callback")
+	public String callback() {
+		return "callback";
+	}
 }
