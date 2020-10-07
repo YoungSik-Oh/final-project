@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="users">
+	<select id="checkId" parameterType="string" resultType="string">
+		SELECT id FROM pusers
+		WHERE id = #{id}
+	</select>
+	
+	<insert id="signup" parameterType="com.team4.acornshop.dto.UsersDto">
+		INSERT INTO pusers
+		(
+			id
+			, pwd
+			, name
+			, phone
+			, addr
+			, email
+			<if test="naveremail != null and uniqid != null">
+				,naveremail
+				,uniqid
+			</if>	 
+			, regdate
+		)
+		VALUES
+		(
+			#{id}
+			, #{pwd}
+			, #{name}
+			, #{phone}
+			, #{addr}
+			, #{email}
+			<if test="naveremail != null and uniqid != null">
+				,#{naveremail}
+				,#{uniqid}
+			</if>
+			, SYSDATE)
+	</insert>
+	
+	<select id="getData" parameterType="string" resultType="com.team4.acornshop.dto.UsersDto">
+		SELECT * FROM pusers
+		WHERE id = #{id}
+	</select>
+	
+	<select id="loginProcess" parameterType="com.team4.acornshop.dto.UsersDto" resultType="string">
+		SELECT id FROM pusers
+		WHERE id = #{naveremail} AND uniqid = #{uniqid}
+	</select>
+	
+	<update id="privacyUpdate" parameterType="com.team4.acornshop.dto.UsersDto">
+		UPDATE pusers
+		SET phone = #{phone}, email = #{email}, addr = #{addr}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="updatePwd" parameterType="com.team4.acornshop.dto.UsersDto">
+		UPDATE pusers
+		SET pwd = #{pwd}
+		WHERE id = #{id}
+	</update>
+	
+	<delete id="out" parameterType="string">
+		DELETE pusers
+		WHERE id = #{id}
+	</delete>
+	
+	<select id="findId" parameterType="com.team4.acornshop.dto.UsersDto" resultType="com.team4.acornshop.dto.UsersDto">
+		SELECT id FROM pusers
+		WHERE phone = #{phone} AND name = #{name}
+	</select>
+	
+	<select id="findPwd" parameterType="com.team4.acornshop.dto.UsersDto" resultType="string">
+		SELECT id FROM pusers
+		WHERE id = #{id} AND email = #{email}
+	</select>
+	
+	<update id="updateFindNewPwd" parameterType="com.team4.acornshop.dto.UsersDto">
+		UPDATE pusers
+		SET pwd = #{pwd}
+		WHERE email = #{email}
+	</update>
+	
+	<select id="emailConfirm" parameterType="string" resultType="string">
+		SELECT email FROM pusers
+		WHERE email = #{email}
+	</select>
+</mapper>

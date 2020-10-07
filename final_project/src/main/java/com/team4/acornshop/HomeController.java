@@ -8,11 +8,44 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 	
 	
-	@RequestMapping("/main.do")
+	@RequestMapping("/main")
 	public String home() {
 	
-		
 		return "main";
 	}
 	
+	@RequestMapping("/naverLogin")
+	public String naverLogin() {
+		return "naverLogin";
+	}
+	
+	@RequestMapping("/callback")
+	public String callback() {
+		return "callback";
+	}
+
+	@RequestMapping("/mypage/mypage.do")
+	public String mypage() {
+		
+		return "mypage/mypage";
+	}
+	
+	@RequestMapping("/mypage/orderlist.do")
+	public String OrderList() {
+		
+		return "mypage/orderlist";
+	}
+	
+	@RequestMapping("/mypage/product.do")
+	public String product() {
+	
+		return "mypage/product";
+	}
+	
+	@RequestMapping("/mypage/orderdetail.do")
+	public String orderdetail() {
+		
+		return "mypage/orderdetail";
+	}
+
 }
