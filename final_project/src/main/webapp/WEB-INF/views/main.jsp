@@ -40,7 +40,6 @@
 		    		</form>
 				</div>
 				<div class="col">
-<<<<<<< HEAD
 					<c:choose>
 						<c:when test="${empty id }">
 							<a href="${pageContext.request.contextPath }/users/loginForm.do" class="btn btn-outline-primary">로그인/회원가입</a>		
@@ -50,11 +49,9 @@
 							<a href="javascript:" class="btn btn-outline-danger" id="logout">로그아웃</a>
 						</c:otherwise>
 					</c:choose>	
-=======
 					<button class="btn btn-primary">로그인</button>
 					<button class="btn btn-primary">회원가입</button>
 					<a href="mypage/mypage.do">마이페이지</a>
->>>>>>> refs/remotes/origin/master
 				</div>
 			</div>
 		</div>
