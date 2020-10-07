@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%-- <%@ page session="false" %> --%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <html>
 <head>
 	<title>Acorn ShoppingMall</title>
@@ -45,6 +47,9 @@
 							<a href="javascript:" class="text-danger" id="logout">로그아웃</a>
 						</c:otherwise>
 					</c:choose>	
+					<button class="btn btn-primary">로그인</button>
+					<button class="btn btn-primary">회원가입</button>
+					<a href="mypage/mypage.do">마이페이지</a>
 				</div>
 			</div>
 		</div>
