@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="product">
+	<insert id="insert" parameterType="productDto">
+		INSERT INTO product
+		(pNo,pCategory,pTitle,pPrice,pMainImage,pContent,pImage1,pImage2,pImage3,pImage4,pIsUsed,pStock,pRegdate)
+		VALUES(product_seq.NEXTVAL, #{pCategory}, #{pTitle},
+			#{pPrice}, #{pMainImage}, #{pContent},#{pImage1},#{pImage2},#{pImage3},#{pImage4},#{pIsUsed},#{pStock} ,SYSDATE)
+	</insert>
+	
+	<select id="getList" parameterType="productDto" resultType="productDto">
+		SELECT result1.*
+		FROM
+			(SELECT pNo,pTitle,pContent
+			FROM product
+			ORDER BY pNo DESC) result1)
+	</select>
+</mapper>

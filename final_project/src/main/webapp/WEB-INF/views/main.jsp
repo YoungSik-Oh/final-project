@@ -28,6 +28,7 @@
 				<div class="col">
 					<a href="회원가입 페이지 링크">로그인/회원가입</a>
 				</div>
+				<a href="${pageContext.request.contextPath }/product/product_insert_form.do">등록하기 연습</a>
 			</div>
 		</div>
 		<!-- Top Contents End -->
@@ -82,7 +83,7 @@
 						<img class="card-img-top" src="${pageContext.request.contextPath }/resources/images/item1.jpg" alt="첫번째 상품">
 						<div class="card-body">
 				    		<h5 class="card-title">상품명</h5>
-				    		<p class="card-text">상품간단설명</p>
+				    		<p class="card-text">상품간단설명테스트</p>
 				    		<a href="#" class="btn btn-primary">구매하기</a>
 						</div>
 					</div>
