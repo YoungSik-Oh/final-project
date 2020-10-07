@@ -41,8 +41,9 @@
 							<a href="${pageContext.request.contextPath }/users/loginForm.do" class="btn btn-outline-primary">로그인/회원가입</a>		
 						</c:when>
 						<c:otherwise>
-							<a href="${pageContext.request.contextPath }/users/private/myPage.do" class="btn btn-outline-info"><strong>${id }</strong>님 안녕하세요.</a>
-							<a href="javascript:" class="btn btn-outline-danger" id="logout">로그아웃</a>
+							<strong>${id }</strong>님
+							<a href="mypage/mypage.do" class="text-dark">마이페이지</a>
+							<a href="javascript:" class="text-danger" id="logout">로그아웃</a>
 						</c:otherwise>
 					</c:choose>	
 					<button class="btn btn-primary">로그인</button>

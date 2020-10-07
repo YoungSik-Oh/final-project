@@ -25,12 +25,21 @@
 	.form-control{
 		height : 50px;
 	}
+	
+	#logo{
+		display : block;
+		text-align : center;
+		margin-top : 30px;
+		margin-bottom : 20px;
+	}
 </style>
 </head>
 <body>
 	<div class="container">
-		<a href="${pageContext.request.contextPath }/home.do" class="btn btn-outline-primary">메인페이지</a>
 		<div class="card">
+			<a href="${pageContext.request.contextPath }/" id="logo">
+				<img class="img-fluid" src="${pageContext.request.contextPath }/resources/images/logo_umarket.png" alt="Acorn ShoppingMall Logo" />
+			</a>
 			<h1>개인정보 수정 페이지 입니다.</h1>
 			<div class="card-body">
 				<form action="${pageContext.request.contextPath }/users/private/personalInformation.do" method="post" id="myForm">
