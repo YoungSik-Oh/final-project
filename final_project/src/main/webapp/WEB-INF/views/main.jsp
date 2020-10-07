@@ -35,7 +35,7 @@
 		<!-- Category Navigation -->
 		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+	  			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#categorynavigation" aria-controls="categorynavigation" aria-expanded="false" aria-label="Toggle navigation">
 			    	<span class="navbar-toggler-icon"></span>
 			  	</button>
 				<a class="navbar-brand" href="#">카테고리</a>
