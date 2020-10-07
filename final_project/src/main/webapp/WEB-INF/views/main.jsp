@@ -1,11 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<<<<<<< HEAD
-<%-- <%@ page session="false" %> --%>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-=======
->>>>>>> refs/remotes/origin/master
 <html>
 <head>
 	<title>Acorn ShoppingMall</title>
@@ -40,21 +35,16 @@
 		    		</form>
 				</div>
 				<div class="col">
-<<<<<<< HEAD
 					<c:choose>
 						<c:when test="${empty id }">
 							<a href="${pageContext.request.contextPath }/users/loginForm.do" class="btn btn-outline-primary">로그인/회원가입</a>		
 						</c:when>
 						<c:otherwise>
-							<a href="${pageContext.request.contextPath }/users/private/myPage.do" class="btn btn-outline-info"><strong>${id }</strong>님 안녕하세요.</a>
-							<a href="javascript:" class="btn btn-outline-danger" id="logout">로그아웃</a>
+							<strong>${id }</strong>님
+							<a href="mypage/mypage.do" class="text-dark">마이페이지</a>
+							<a href="javascript:" class="text-danger" id="logout">로그아웃</a>
 						</c:otherwise>
 					</c:choose>	
-=======
-					<button class="btn btn-primary">로그인</button>
-					<button class="btn btn-primary">회원가입</button>
-					<a href="mypage/mypage.do">마이페이지</a>
->>>>>>> refs/remotes/origin/master
 				</div>
 			</div>
 		</div>

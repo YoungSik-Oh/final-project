@@ -17,7 +17,7 @@
 	  <div class="col mb-4">
 	    <div class="card">
 	      <div class="card-body">
-	        <h5 class="card-title">개인정보 관리</h5>
+	        <h5 class="card-title"><a href="${pageContext.request.contextPath }/users/private/myPage.do">개인정보 관리</a></h5>
 	        <p class="card-text">내 개인 정보를 관리합니다.</p>
 	      </div>
 	    </div>
