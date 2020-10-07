@@ -1,5 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%-- <%@ page session="false" %> --%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <html>
 <head>
@@ -7,7 +9,16 @@
 	<!-- 부트스트랩 CSS import -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap-grid.css" />
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
+<%
+	//네이버 로그인 시 로그인 컨트롤러를 탈 수 없으므로 파라미터로 id를 넘겨줘서 session에 담아준다.
+	String id = request.getParameter("id");
+
+	if(id != null){
+		session.setAttribute("id", id);
+	}
+%>
 <body>
 	<!-- Body Contents -->
 	<div class="container">
@@ -26,6 +37,15 @@
 		    		</form>
 				</div>
 				<div class="col">
+					<c:choose>
+						<c:when test="${empty id }">
+							<a href="${pageContext.request.contextPath }/users/loginForm.do" class="btn btn-outline-primary">로그인/회원가입</a>		
+						</c:when>
+						<c:otherwise>
+							<a href="${pageContext.request.contextPath }/users/private/myPage.do" class="btn btn-outline-info"><strong>${id }</strong>님 안녕하세요.</a>
+							<a href="javascript:" class="btn btn-outline-danger" id="logout">로그아웃</a>
+						</c:otherwise>
+					</c:choose>	
 					<button class="btn btn-primary">로그인</button>
 					<button class="btn btn-primary">회원가입</button>
 					<a href="mypage/mypage.do">마이페이지</a>
@@ -46,7 +66,7 @@
 			        		<a class="nav-link" href="#">남성의류</a>
 			      		</li>
 			      		<li class="nav-item active">
-			        		<a class="nav-link" href="#">헬스/건강식품</a>	
+			        		<a class="nav-link" href="#">헬스/건강식품</a>
 			      		</li>
 			      		<li class="nav-item active">
 			        		<a class="nav-link" href="#">전자기기</a>
@@ -248,5 +268,14 @@
 	<script src="${pageContext.request.contextPath }/resources/js/jquery-3.5.1.js"></script>
 	<script src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
 	<!-- Script End -->
+	<script>
+	$('#logout').on('click',function(){
+		var isLogout = confirm("로그아웃 하시겠습니까?");
+		if(confirm){
+			sessionStorage.clear();
+			location.href="${pageContext.request.contextPath }/users/logout.do";
+		}
+	});
+</script>
 </body>
 </html>
