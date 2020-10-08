@@ -75,16 +75,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="col mb-4">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">
-							<a href="orderdetail.do">주문상세</a>
-						</h5>
-						<p class="card-text">주문상세내역 확인</p>
-					</div>
-				</div>
-			</div>
 		</div>
 		<h1 class="text-center">footer 부분</h1>
 	</div>

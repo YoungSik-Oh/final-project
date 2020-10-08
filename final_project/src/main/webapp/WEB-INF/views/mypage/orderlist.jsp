@@ -32,7 +32,6 @@
 					<li class="nav-item"><a class="nav-link" href="#">판매 목록</a></li>
 				</ul>
 			</div>
-
 			<div>
 				<span class="float:left">주문일 : regdate </span>
 					<a href="orderdetail.do" style="float: right">주문 상세보기</a>
@@ -48,9 +47,7 @@
 					<p>금액 / 갯수</p>
 				</div>
 			</div>
-
 		</div>
-
 		<h1 class="text-center">footer 부분</h1>
 
 	</div>
