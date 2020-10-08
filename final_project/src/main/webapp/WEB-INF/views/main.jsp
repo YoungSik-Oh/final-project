@@ -17,6 +17,22 @@
 		session.setAttribute("id", id);
 	}
 %>
+<script>
+	//관리자 페이지에서 정지먹은 회원은 isAdmin 라는 session 값을 가지고 있다.
+	//만약 로그인 시 해당 아이디가 isAdmin 이라는 값을 가지고 있으면 경고창을 띄우고 강제 로그아웃 시킨다.
+	var isPause = "${isPause}";
+	
+	if(isPause == "yes"){
+		alert("해당 아이디는 정지상태입니다. 관리자에게 문의주세요..");
+		
+		$.ajax({
+			url : '${pageContext.request.contextPath }/isPuaseUser.do',
+			success : function(data){
+				location.reload();
+			}
+		});
+	}
+</script>
 <body>
 	<!-- Body Contents -->
 	<div class="container">
@@ -42,6 +58,9 @@
 						<c:otherwise>
 							<strong>${id }</strong>님
 							<a href="mypage/mypage.do" class="text-dark">마이페이지</a>
+							<c:if test="${not empty isAdmin }">
+								<a href="${pageContext.request.contextPath }/admin/main.do">관리자</a>
+							</c:if>
 							<a href="javascript:" class="text-danger" id="logout">로그아웃</a>
 						</c:otherwise>
 					</c:choose>	

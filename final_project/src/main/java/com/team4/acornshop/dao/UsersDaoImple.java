@@ -94,4 +94,9 @@ public class UsersDaoImple implements UsersDao{
 			return true;
 		}
 	}
+
+	@Override
+	public void deleteUsers(UsersDto dto) {
+		session.update("users.deleteUser", dto);
+	}
 }

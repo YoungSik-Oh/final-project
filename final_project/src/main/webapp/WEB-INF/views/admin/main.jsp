@@ -14,7 +14,7 @@
 	<div class="card-group">
 	  <div class="card" >
 	    <div  class="card-body text-center">
-	      <h3 class="card-title"><a href="${pageContext.request.contextPath }/users/list.do">USERS</a></h3>
+	      <h3 class="card-title"><a href="${pageContext.request.contextPath }/admin/userAdmin.do">USERS</a></h3>
 	      <p class="card-text">회원 관리</p>
 	      <p class="card-text"><small class="text-muted">회원의 정보를 관리합니다.</small></p>
 	    </div>

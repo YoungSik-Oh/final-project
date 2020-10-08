@@ -233,4 +233,16 @@ public class UsersController {
 		
 		return map;
 	}
+	
+	//정지먹은 회원 강제 로그아웃 시키기
+	@RequestMapping("/isPuaseUser")
+	@ResponseBody
+	public Map<String, Object> isPuase(HttpSession session){
+		Map<String, Object> map = new HashMap<>();
+		
+		session.invalidate();
+
+		return map;
+		
+	}
 }

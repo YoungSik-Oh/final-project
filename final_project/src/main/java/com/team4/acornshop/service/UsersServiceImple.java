@@ -53,10 +53,24 @@ public class UsersServiceImple implements UsersService{
 			isValid = BCrypt.checkpw(inputPwd, dbPwd);
 		}
 		
+		//admin 페이지에서 정지 먹은 회원은 disabled라는 칼럼에 yes값이 들어가 있다.
+		//정보를 가져왔을 때 해당 로그인 id에 yes값이 있으면 session에 isPause 값을 저장해준다.
+		String isPause = dbDto.getDisabled();
+		
 		if(isValid) {
 			session.setAttribute("id", dto.getId());
 			m.addObject("isValid", isValid);
 			
+			//관리자 정보도 작업한다.
+			String isAdmin = dbDto.getIsadmin();
+	
+			if(isAdmin != null) {
+				session.setAttribute("isAdmin", isAdmin);
+			}
+			
+			if(isPause != null) {
+				session.setAttribute("isPause", isPause);
+			}
 		}else {
 			m.addObject("isValid", isValid);
 		}
