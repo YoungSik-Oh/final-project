@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap-grid.css" />
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
+
 <%
 	//네이버 로그인 시 로그인 컨트롤러를 탈 수 없으므로 파라미터로 id를 넘겨줘서 session에 담아준다.
 	String id = request.getParameter("id");
@@ -89,9 +90,6 @@
 						<li class="nav-item active"><a class="nav-link" href="#">전자기기</a>
 						</li>
 						<li class="nav-item active"><a class="nav-link" href="#">여성의류</a>
-						</li>
-						<li class="nav-item active"><a class="nav-link" href="#">여성의류</a>
-						</li>
 					</ul>
 				</div>
 			</nav>
@@ -277,8 +275,8 @@
 			<div class="container text-center">
 				<div class="row">
 					<div class="col mt-3">
-						<a href="#">공지사항</a> <b> | </b> <a href="#">운영정책</a> <b> | </b> <a
-							href="#">이용약관</a> <b> | </b> <a href="#">개인정보처리방침</a>
+						<a href="#">공지사항</a> <b> | </b> <a href="${pageContext.request.contextPath }/operation/operation_policy.do">운영정책</a> <b> | </b> <a
+							target="_blank" href="${pageContext.request.contextPath }/operation/access_terms.do">이용약관</a> <b> | </b> <a target="_blank" href="${pageContext.request.contextPath }/operation/privacy.do">개인정보처리방침</a>
 					</div>
 				</div>
 				<div class="row">
