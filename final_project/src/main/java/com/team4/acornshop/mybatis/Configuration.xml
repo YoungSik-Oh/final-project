@@ -6,10 +6,12 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<!-- 별명을 붙여서 짧게 쓰도록 type 별칭 등록-->
 	<typeAliases>
 		<typeAlias type="com.team4.acornshop.dto.ProductDto" alias="productDto"/>
+		<typeAlias type="com.team4.acornshop.dto.CartDto" alias="cartDto"/>
 	</typeAliases>
 	
 	<!-- 사용할 Mapper 목록 설정  -->
 	<mappers>
+		<mapper resource="com/team4/acornshop/mybatis/CartMapper.xml" />
 		<mapper resource="com/team4/acornshop/mybatis/ProductMapper.xml" />
   		<mapper resource="com/team4/acornshop/mybatis/UsersMapper.xml"/>
   	</mappers>

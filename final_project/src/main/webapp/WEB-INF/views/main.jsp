@@ -23,6 +23,7 @@
 		<!-- Top Contents -->
 		<div class="container">
 			<div class="row">
+			<a href="${pageContext.request.contextPath }/cart/cart.do">장바구니</a>
 				<div class="col">
 					<a href="${pageContext.request.contextPath }/"> <img
 						class="img-fluid"
@@ -137,11 +138,30 @@
 						<img class="card-img-top"
 							src="${pageContext.request.contextPath }/resources/images/item1.jpg"
 							alt="첫번째 상품">
+					
 						<div class="card-body">
-				    		<h5 class="card-title">상품명</h5>
-				    		<p class="card-text">상품간단설명테스트</p>
-				    		<a href="cart" class="btn btn-primary">구매하기</a>
+						<form action="${pageContext.request.contextPath }/cart/insert.do" method="post">
+							<c:forEach var="tmp" items="${plist}">
+								<input type="hidden" name="pTitle" value="${tmp.pTitle}"/>
+								<input type="hidden" name="pId" value="${tmp.pId}"/>
+								<input type="hidden" name="pPrice" value="${tmp.pPrice} "/>
+								<input type="hidden" name="pId" value="${pId }" />
+					    		<h5 class="card-title" >${tmp.pTitle}</h5>
+					    		<p class="card-text">${tmp.pContents}</p>
+					    		<p class="card-text">${tmp.pPrice }</p>
+					    		<button class="btn btn-primary" type="submit">장바구니에 담기</button>
+					    	</c:forEach>
+						</form>
+					<%-- 	
+						<c:forEach var="tmp" items="${plist}">
+				    		<h5 class="card-title">${tmp.pTitle}</h5>
+				    		<p class="card-text">${tmp.pContents}</p>
+				    		<p class="card-text">${tmp.pPrice }</p>
+				    		<a id="addcart" href="${pageContext.request.contextPath }/cart/insert.do?pId=${pId}" class="btn btn-primary">구매하기</a>
+				    	</c:forEach>
+				    --%>
 						</div>
+					
 					</div>
 				</div>
 				<div class="col-3">
@@ -289,6 +309,10 @@
 			sessionStorage.clear();
 			location.href="${pageContext.request.contextPath }/users/logout.do";
 		}
+	});
+	
+	$('#addcart').on('click',function(){
+		
 	});
 </script>
 </body>

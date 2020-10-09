@@ -17,11 +17,11 @@ public class ProductController {
 	@Autowired
 	private ProductService productservice;
 	
-	@RequestMapping("/product/list")
+	@RequestMapping("/main")
 	public ModelAndView getList(HttpServletRequest request, 
 			ModelAndView mView) {
 		productservice.getList(request);
-		mView.setViewName("cafe/list");
+		mView.setViewName("main");
 		return mView;
 	}
 	

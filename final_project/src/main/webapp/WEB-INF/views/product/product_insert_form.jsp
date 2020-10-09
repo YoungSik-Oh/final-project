@@ -8,9 +8,16 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" />
 </head>
 <body>
+<%
+	//로그인된 회원의 아이디 읽어오기 
+	String id=(String)session.getAttribute("id");
+%>
 <div class="container">
 <h1 style="text-align:center;">상품 올리기</h1>
-	<form action="product_insert.jsp" method="post" enctype="multipart/form-data">
+	<form action="product_insert.do" method="post" enctype="multipart/form-data">
+		<div class="form-group">
+			<input class="form-control" type="hidden" value="<%=id %>" disabled/>
+		</div>
 	  <div class="form-group">
 	    <label for="pCategory">상품카테고리 주르륵</label>
 	    <input type="text" class="form-control" id="pCategory" name="pCategory" aria-describedby="emailHelp">

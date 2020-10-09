@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cart">
+	<insert id="insert" parameterType="cartDto">
+		INSERT INTO cart
+		(cartId, id, pId, pTitle, pPrice, pCheck)
+		VALUES(cart_seq.NEXTVAL, #{id}, #{pId}, #{pTitle}, #{pPrice}, 0)
+	</insert>
+	
+	<select id="getList" resultType="cartDto">
+		SELECT *
+			FROM cart
+		WHERE id=#{id}
+	</select>
+	
+	<select id="getList2" resultType="cartDto">
+		SELECT *
+			FROM cart
+		WHERE id=#{id} AND pCheck=1
+	</select>
+	
+	<select id="getData" parameterType="String" resultType="cartDto">
+		SELECT pTitle,pStock,pPrice
+		FROM cart
+		WHERE pId=#{pId}
+	</select>
+	
+	<delete id="deleteproduct" parameterType="int">
+		DELETE FROM cart
+		WHERE cartId=#{cartId}
+	</delete>
+</mapper>

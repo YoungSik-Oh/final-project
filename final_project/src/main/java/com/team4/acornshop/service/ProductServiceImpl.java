@@ -13,19 +13,18 @@ import com.team4.acornshop.dto.ProductDto;
 @Service
 public class ProductServiceImpl implements ProductService{
 	@Autowired
-	private ProductDao productdao;
+	private ProductDao productDao;
 
 	@Override
 	public void saveContent(ProductDto dto) {
 		// TODO Auto-generated method stub
-		productdao.insert(dto);
+		productDao.insert(dto);
 	}
 
 	@Override
-	public List<ProductDto> getList(HttpServletRequest request) {
+	public void getList(HttpServletRequest request) {
 		// TODO Auto-generated method stub
-		ProductDto dto=new ProductDto();
-		List<ProductDto> list=productdao.getList(dto);
-		return list;
+		List<ProductDto> plist=productDao.getList();
+		request.setAttribute("plist", plist);
 	}
 }

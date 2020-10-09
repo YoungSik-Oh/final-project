@@ -3,16 +3,18 @@
 <mapper namespace="product">
 	<insert id="insert" parameterType="productDto">
 		INSERT INTO product
-		(pNo,pCategory,pTitle,pPrice,pMainImage,pContent,pImage1,pImage2,pImage3,pImage4,pIsUsed,pStock,pRegdate)
+		(pId,pCategory,pTitle,pPrice,pMainImage,pContents,pImage1,pImage2,pImage3,pImage4,pIsUsed,pRegdate)
 		VALUES(product_seq.NEXTVAL, #{pCategory}, #{pTitle},
-			#{pPrice}, #{pMainImage}, #{pContent},#{pImage1},#{pImage2},#{pImage3},#{pImage4},#{pIsUsed},#{pStock} ,SYSDATE)
+			#{pPrice}, #{pMainImage}, #{pContents},#{pImage1},#{pImage2},#{pImage3},#{pImage4},#{pIsUsed},#{pStock} ,SYSDATE)
 	</insert>
 	
-	<select id="getList" parameterType="productDto" resultType="productDto">
-		SELECT result1.*
-		FROM
-			(SELECT pNo,pTitle,pContent
+	<select id="getData" parameterType="int" resultType="productDto">
+		SELECT pTitle,pContents,pPrice
+			FROM product where pId=#{pId}
+	</select>
+	
+	<select id="getList" resultType="productDto">
+		SELECT pId,pTitle,pContents,pPrice
 			FROM product
-			ORDER BY pNo DESC) result1)
 	</select>
 </mapper>

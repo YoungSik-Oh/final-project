@@ -2,7 +2,7 @@ package com.team4.acornshop.dto;
 
 public class ProductDto {
 	private String seller;
-	private int pNo;
+	private int pId;
 	private String pCategory;
 	private String pTitle;
 	private int pPrice;
@@ -18,12 +18,12 @@ public class ProductDto {
 	
 	public ProductDto() {}
 
-	public ProductDto(String seller, int pNo, String pCategory, String pTitle, int pPrice, String pMainImage, String pContents,
+	public ProductDto(String seller, int pId, String pCategory, String pTitle, int pPrice, String pMainImage, String pContents,
 			String pImage1, String pImage2, String pImage3, String pImage4, String pIsUsed, String pRegdate,
 			int pStock) {
 		super();
 		this.seller = seller;
-		this.pNo = pNo;
+		this.pId = pId;
 		this.pCategory = pCategory;
 		this.pTitle = pTitle;
 		this.pPrice = pPrice;
@@ -44,12 +44,12 @@ public class ProductDto {
 		this.seller = seller;
 	}
 	
-	public int getpNo() {
-		return pNo;
+	public int getpId() {
+		return pId;
 	}
 
-	public void setpNo(int pNo) {
-		this.pNo = pNo;
+	public void setpId(int pId) {
+		this.pId = pId;
 	}
 
 	public String getpCategory() {

@@ -357,7 +357,7 @@
 					}else{
 						alert("이메일 인증번호가 : "+inputEmail+"로 전송되었습니다!");
 						$('#ctForm').css('display','block');
-						
+						console.log(rdNum);
 						var inputRdNum = '';
 						
 						$('#inputRdNum').on('input',function(){

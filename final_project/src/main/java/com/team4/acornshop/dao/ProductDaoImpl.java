@@ -17,11 +17,19 @@ public class ProductDaoImpl implements ProductDao{
 		// TODO Auto-generated method stub
 		session.insert("product.insert", dto);
 	}
-
+	
 	@Override
-	public List<ProductDto> getList(ProductDto dto) {
+	public ProductDto getData(int pId) {
 		// TODO Auto-generated method stub
-		return session.selectList("product.getList", dto);
+		return session.selectOne("product.getData", pId);
 	}
+	
+	@Override
+	public List<ProductDto> getList() {
+		// TODO Auto-generated method stub
+		return session.selectList("product.getList");
+	}
+
+	
 
 }

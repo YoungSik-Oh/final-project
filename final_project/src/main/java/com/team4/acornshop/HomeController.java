@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 	
 	
-	@RequestMapping("/main")
-	public String home() {
+	//@RequestMapping("/main")
+	//public String home() {
 	
-		return "main";
-	}
+	//	return "main";
+	//}
 	
 	@RequestMapping("/naverLogin")
 	public String naverLogin() {
