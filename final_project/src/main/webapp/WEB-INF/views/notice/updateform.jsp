@@ -7,6 +7,11 @@
 <meta charset="UTF-8">
 <title>공지사항 수정 </title>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+<style>
+	h1{
+		margin-top : 30px;
+	}
+</style>
 </head>
 <body>
 <%@ include file="/include/header.jsp" %>

@@ -55,26 +55,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="col mb-4">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">
-							<a href="#">쿠폰</a>
-						</h5>
-						<p class="card-text">쿠폰등록 및 사용내역을 확인 할 수 있습니다.</p>
-					</div>
-				</div>
-			</div>
-			<div class="col mb-4">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">
-							<a href="#">CASH</a>
-						</h5>
-						<p class="card-text">CASH충전 및 사용내역을 확인 할 수 있습니다.</p>
-					</div>
-				</div>
-			</div>
 		</div>
 		<h1 class="text-center">footer 부분</h1>
 	</div>

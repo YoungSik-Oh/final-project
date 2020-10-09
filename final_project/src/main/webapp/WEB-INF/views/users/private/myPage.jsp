@@ -10,7 +10,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <style>
 	.card{
-		margin-top : 30px;
+		margin-top : 100px;
+		margin-bottom : 100px;
 	}
 
 	.card-body{
@@ -33,12 +34,9 @@
 </style>
 </head>
 <body>
+	<%@ include file="/include/header.jsp" %>
 	<div class="container">
-		<a href="${pageContext.request.contextPath }/main.do" class="btn btn-outline-primary">메인페이지</a>
-		<h1>마이페이지에서 개인정보 클릭 시 보여지는 임시 개인정보 페이지 입니다.</h1>
-		
 <!-- 		네이버 간편 로그인에서는 비밀번호가 고유식별번호로 들어가서 개인정보를 확일할 수 없으므로 비밀번호도 입력란에 입력시키게 한다. -->
-		
 		<div class="card">
 		  <div class="card-body">
 		    <h5 class="card-title">개인정보 페이지 입니다. 비밀번호를 입력해 주세요.</h5>
@@ -92,6 +90,7 @@
 			<a href="javascript:" id="popUpPwd" class="btn btn-outline-info">비밀번호 변경하기</a>
 			<a href="javascript:" id="popUpOut" class="btn btn-outline-danger">탈퇴</a>
 		</div>
+		<%@ include file="/include/footer.jsp" %>
 	</div>
 <script>
 	$('#pwdConfirm').on('click',function(){
