@@ -18,12 +18,10 @@
 	<div class="card border-dark" >
 	  <div class="card-header">
 	    글번호 : ${dto.nNo }  			<a href="delete.do?nNo=${dto.nNo}" id="isDelete">삭제</a>				
-	    <!-- <a href="javascript:deleteConfirm()">삭제</a> -->
-	    <hr/>
+      <hr/>
 	  <br/>
 	  	제목 : ${dto.nTitle }
 	  	<span style="float:right"> 등록일자 ${dto.regdate }</span>
-	  
 	  </div>
 	  <div class="card-body text-dark">
 	  	<span style="float:right"> 조회수 ${dto.nViewCount }</span></br>

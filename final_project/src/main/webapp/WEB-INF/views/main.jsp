@@ -45,7 +45,7 @@
 						alt="Acorn ShoppingMall Logo" />
 					</a>
 				</div>
-				<div class="col">
+				<div cl]ass="col">
 					<form class="form-inline my-2 my-lg-0">
 						<input class="form-control mr-sm-2" type="search"
 							placeholder="찾고싶은 상품을 검색하세요" aria-label="Search">
@@ -55,7 +55,7 @@
 				<div class="col">
 					<c:choose>
 						<c:when test="${empty id }">
-							<a href="${pageContext.request.contextPath }/users/loginForm.do" class="btn btn-outline-primary">로그인/회원가입</a>		
+							<a href="${pageContext.request.contextPath }/users/loginForm.do" class="btn btn-outline-primary">로그인/회원가입</a>
 						</c:when>
 						<c:otherwise>
 							<strong>${id }</strong>님
@@ -64,6 +64,7 @@
 								<a href="${pageContext.request.contextPath }/admin/main.do">관리자</a>
 							</c:if>
 							<a href="javascript:" class="text-danger" id="logout">로그아웃</a>
+							<a href="product/productInsertform.do ">상품 등록</a>
 						</c:otherwise>
 					</c:choose>	
 				</div>

@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!-- Footer Contents -->
 <br/>
-<div class="container text-center fixed-bottom">
+<div class="container text-center">
 
 
 <table class="table table-borderless ">
