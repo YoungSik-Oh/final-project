@@ -38,8 +38,7 @@
 					<div class="card-body">
 						<h5 class="card-title">
 							<a
-								href="${pageContext.request.contextPath}/product/productdetail.do">내가
-								올린 상품</a>
+								href="${pageContext.request.contextPath}//mypage/myproductList.do">내가 올린 상품</a>
 						</h5>
 						<p class="card-text">내가 올린 상품을 확인 할 수 있습니다.</p>
 					</div>
