@@ -74,7 +74,7 @@
 	  <li class="list-group-item">상품 문의</li>
 	  <li class="list-group-item">판매자의 다른 상품</li>
 	</ul>
-
+function
 
 <h1 class="text-center">footer 부분 </h1>
 

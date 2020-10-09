@@ -3,8 +3,14 @@
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+	<typeAliases >
+		<typeAlias type="com.team4.acornshop.notice.dto.NoticeDto"
+			alias="noticeDto"/>	
+	</typeAliases>
+	
   	<mappers>
   		<mapper resource="com/team4/acornshop/mybatis/UsersMapper.xml"/>
+  		<mapper resource="com/team4/acornshop/mybatis/NoticeMapper.xml"/>
   		<mapper resource="com/team4/acornshop/mybatis/adminMapper.xml"/>
   	</mappers>
 </configuration>

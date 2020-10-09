@@ -9,8 +9,8 @@
 	href="${pageContext.request.contextPath}/resources/css/bootstrap.css" />
 </head>
 <body>
+<%@ include file="/include/header.jsp" %>
 <div class="container">
-	<h1 class="text-center">header 부분 </h1>
 	<h1 class="text-center">관리자 페이지 메인</h1>
 	<div class="card-group">
 	  <div class="card" >
@@ -36,5 +36,6 @@
 	  </div>
 	</div>
 </div>
+<%@ include file="/include/footer.jsp" %>
 </body>
 </html>

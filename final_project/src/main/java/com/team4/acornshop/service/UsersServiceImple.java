@@ -60,7 +60,6 @@ public class UsersServiceImple implements UsersService{
 		if(isValid) {
 			session.setAttribute("id", dto.getId());
 			m.addObject("isValid", isValid);
-			
 			//관리자 정보도 작업한다.
 			String isAdmin = dbDto.getIsadmin();
 	
