@@ -355,7 +355,7 @@
 						$('#email').val("");
 						$('#email').focus();
 					}else{
-						alert("이메일 인증번호가 : "+inputEmail+"로 전송되었습니다!");
+						alert("이메일 인증번호가 : "+inputEmail+"로 전송되었습니다!" + rdNum);
 						$('#ctForm').css('display','block');
 						
 						var inputRdNum = '';

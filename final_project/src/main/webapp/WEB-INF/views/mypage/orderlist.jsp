@@ -10,6 +10,14 @@
 	href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 </head>
 <body>
+<!--  PRODUCT 테이블에서 -->
+
+<!--  PSTATE = EX) NULL = 구매X     1 = 구매 -->
+
+<!-- PSTATE가 1이고 pBuyer가 세션 ID와 일치하는 상품을 가져와서 -->
+
+<!-- 나열하기 -->
+
 	<div class="container">
 		<div class="text-center">
 			fixed-top

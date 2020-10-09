@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="admin">
+	<select id="userList" resultType="com.team4.acornshop.dto.UsersDto" parameterType="com.team4.acornshop.dto.UsersDto">
+		SELECT *
+		FROM
+			(SELECT result1.*, ROWNUM rnum
+				FROM
+				(SELECT * FROM pusers
+				 ORDER BY id DESC) result1)
+		WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
+	</select>
+	
+	<select id="getCount" parameterType="com.team4.acornshop.dto.UsersDto" resultType="int">
+		SELECT NVL(MAX(ROWNUM), 0)
+		FROM pusers
+	</select>
+</mapper>
