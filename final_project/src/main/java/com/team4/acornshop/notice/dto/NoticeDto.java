@@ -1,4 +1,4 @@
-package com.team4.acornshop.dto;
+package com.team4.acornshop.notice.dto;
 
 public class NoticeDto {
 	private int nNo;

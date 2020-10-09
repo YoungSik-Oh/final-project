@@ -13,11 +13,12 @@ public class UsersDto {
 	private String email;
 	private String naveremail;
 	private String uniqid;
+	private String isAdmin;
 	
 	public UsersDto() {}
 
 	public UsersDto(String id, String pid, String pwd, String name, String phone, String profile, String addr,
-			String favorite, String regdate, String email, String naveremail, String uniqid) {
+			String favorite, String regdate, String email, String naveremail, String uniqid, String isAdmin) {
 		super();
 		this.id = id;
 		this.pid = pid;
@@ -31,6 +32,7 @@ public class UsersDto {
 		this.email = email;
 		this.naveremail = naveremail;
 		this.uniqid = uniqid;
+		this.isAdmin = isAdmin;
 	}
 
 	public String getId() {
@@ -128,6 +130,15 @@ public class UsersDto {
 	public void setUniqid(String uniqid) {
 		this.uniqid = uniqid;
 	}
+
+	public String getIsAdmin() {
+		return isAdmin;
+	}
+
+	public void setIsAdmin(String isAdmin) {
+		this.isAdmin = isAdmin;
+	}
+
 	
 	
 }

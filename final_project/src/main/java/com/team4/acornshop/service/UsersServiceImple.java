@@ -56,7 +56,11 @@ public class UsersServiceImple implements UsersService{
 		if(isValid) {
 			session.setAttribute("id", dto.getId());
 			m.addObject("isValid", isValid);
-			
+			String isAdmin = dbDto.getIsAdmin();
+			System.out.println(isAdmin);
+			if(isAdmin != null) {
+				session.setAttribute("isAdmin", isAdmin);
+			}
 		}else {
 			m.addObject("isValid", isValid);
 		}

@@ -13,3 +13,13 @@ CREATE TABLE PUSERS (
  ISADMIN VARCHAR2(4),
  REGDATE DATE
  );
+ -- Notice Table 
+CREATE TABLE NOTICE(
+
+nNo NUMBER PRIMARY KEY   --  공지사항 번호 
+nTitle  VARCHAR2(100) --  공지사항 제목  
+nContent CLOB --  공지사항 내용
+REGDATE DATE -- 공지사항 등록일자
+);
+
+CREATE SEQUENCE notice_seq - 공지사항 시퀀스

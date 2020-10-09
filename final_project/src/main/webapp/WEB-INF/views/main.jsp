@@ -45,7 +45,8 @@
 						<c:otherwise>
 							<strong>${id }</strong>님
 							<a href="mypage/mypage.do" class="text-dark">마이페이지</a>
-							<a href="javascript:" class="text-danger" id="logout">로그아웃</a>
+							<a href="javascript:" class="text-danger" id="logout">로그아웃</a><br/>
+							<c:if test="${not empty isAdmin }"><a href="admin/main.do">관리자 페이지</a></c:if>
 						</c:otherwise>
 					</c:choose>	
 				</div>
