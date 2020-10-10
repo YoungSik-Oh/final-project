@@ -17,12 +17,17 @@ public class ProductDto {
 	private String saveFileName;
 	private long fileSize;
 	private MultipartFile myFile;
+	private int startRowNum;
+	private int endRowNum;
+	private String pWriter;
+	private String id;
 	
 	public ProductDto () {}
 
 	public ProductDto(int pNo, String pTitle, int pPrice, String pShipping, String pState, String pChange,
 			String pContents, String pCategory, String pIsUsed, String pRegdate, String orgFileName,
-			String saveFileName, long fileSize, MultipartFile myFile) {
+			String saveFileName, long fileSize, MultipartFile myFile, int startRowNum, int endRowNum, String pWriter,
+			String id) {
 		super();
 		this.pNo = pNo;
 		this.pTitle = pTitle;
@@ -38,6 +43,10 @@ public class ProductDto {
 		this.saveFileName = saveFileName;
 		this.fileSize = fileSize;
 		this.myFile = myFile;
+		this.startRowNum = startRowNum;
+		this.endRowNum = endRowNum;
+		this.pWriter = pWriter;
+		this.id = id;
 	}
 
 	public int getpNo() {
@@ -150,6 +159,38 @@ public class ProductDto {
 
 	public void setMyFile(MultipartFile myFile) {
 		this.myFile = myFile;
+	}
+
+	public int getStartRowNum() {
+		return startRowNum;
+	}
+
+	public void setStartRowNum(int startRowNum) {
+		this.startRowNum = startRowNum;
+	}
+
+	public int getEndRowNum() {
+		return endRowNum;
+	}
+
+	public void setEndRowNum(int endRowNum) {
+		this.endRowNum = endRowNum;
+	}
+
+	public String getpWriter() {
+		return pWriter;
+	}
+
+	public void setpWriter(String pWriter) {
+		this.pWriter = pWriter;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	

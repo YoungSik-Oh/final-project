@@ -30,7 +30,7 @@ CREATE TABLE product(
 pNo NUMBER PRIMARY KEY, -- 상품 아이디
 pTitle VARCHAR2(100),-- 상품 제목
 pPrice VARCHAR2(100),-- 상품가격
-pShipping CHAR(4),-- 배송비 포함
+pShipping VARCHAR2(30),-- 배송비 포함
 pState VARCHAR2(20),-- 상품 상태
 pChange VARCHAR2(20),--교환여부
 pContents CLOB, --내용
@@ -39,7 +39,9 @@ pIsUsed VARCHAR2(10),-- 중고 여부
 pRegdate DATE,-- 등록일자
 orgFileName VARCHAR2(100),
 saveFileName VARCHAR2(100),
-fileSize NUMBER
+fileSize NUMBER,
+pWriter VARCHAR2(50),
+id varchar2(30)
 );
 
 CREATE SEQUENCE prd_seq;

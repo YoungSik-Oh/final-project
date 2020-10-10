@@ -3,8 +3,46 @@
 <mapper namespace="product">
 	<insert id="insert" parameterType="com.team4.acornshop.dto.ProductDto">
 		INSERT INTO product
-		(pNo, pTitle, pPrice, pShipping, pChange, pContents, pCategory, pIsUsed, pRegdate,orgFileName, saveFileName, fileSize)
-		VALUES(prd_seq.NEXTVAL,#{pTitle},#{pPrice},#{pShipping},#{pChange},#{pContents},#{pCategory},#{pIsUsed},SYSDATE,#{orgFileName},#{saveFileName},#{fileSize})
+		(pNo, id,pTitle, pWriter, pPrice, pShipping, pChange, pContents, pCategory, pIsUsed, pRegdate, orgFileName, saveFileName, fileSize)
+		VALUES(prd_seq.NEXTVAL, #{id},#{pTitle}, #{pWriter}, #{pPrice}, #{pShipping},#{pChange},#{pContents},#{pCategory},#{pIsUsed},SYSDATE,#{orgFileName},#{saveFileName},#{fileSize})
 	</insert>
-
+	<select id="getList" parameterType="com.team4.acornshop.dto.ProductDto" resultType="com.team4.acornshop.dto.ProductDto">
+			SELECT *
+			FROM
+			(SELECT result1.*, ROWNUM AS rnum
+			FROM
+				(SELECT *
+				FROM product
+				<choose>
+					<when test="pTitle != null and orgFileName != null">
+						WHERE pTitle LIKE '%${pTitle}%' 
+						OR orgFileName LIKE '%'||#{orgFileName}||'%'
+					</when>
+					<when test="pTitle != null">
+						WHERE pTitle LIKE '%'||#{pTitle}||'%'
+					</when>
+					<when test="pWriter != null">
+						WHERE pWriter LIKE '%${pWriter}%'
+					</when>
+				</choose>
+				ORDER BY pNo DESC) result1)
+		WHERE rnum BETWEEN #{startRowNum} AND ${endRowNum}
+	</select>
+	
+	<select id="getCount" parameterType="com.team4.acornshop.dto.ProductDto" resultType="int">
+		SELECT NVL(MAX(ROWNUM), 0)
+		FROM product
+		<choose>
+			<when test="pTitle != null and orgFileName != null">
+				WHERE pTitle LIKE '%${pTitle}%' 
+				OR orgFileName LIKE '%'||#{orgFileName}||'%'
+			</when>
+			<when test="pTitle != null">
+				WHERE pTitle LIKE '%'||#{pTitle}||'%'
+			</when>
+			<when test="pWriter != null">
+				WHERE pWriter LIKE '%${pWriter}%'
+			</when>
+		</choose>		
+	</select>
 </mapper> 
