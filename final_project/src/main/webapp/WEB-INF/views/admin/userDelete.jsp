@@ -61,7 +61,7 @@
 				console.log("isvalid : "+data.isvalid);
 				var isvalid = data.isvalid;
 				if(isvalid){
-					var isConfirm = confirm("확인되었습니다. 회원을 정지시킵니다.");
+					var isConfirm = confirm("확인되었습니다");
 					
 					if(isConfirm){
 						var userId = "${userId}";
@@ -72,13 +72,14 @@
 							method : 'get',
 							data : {id : userId},
 							success : function(data){
-								console.log("setDisabled : "+data.setDisabled);
 								var setDisabled = data.setDisabled;
 								
 								if(setDisabled == 'yes'){
 									alert("회원이 정지되었습니다.");
 									window.opener.location.href = "${pageContext.request.contextPath }/admin/userAdmin.do";
 									window.close();
+								}else{
+									alert("setDisabled를 설정하는데서 문제가 발생하였습니다.");
 								}
 							}
 						});

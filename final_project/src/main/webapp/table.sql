@@ -17,10 +17,29 @@ CREATE TABLE PUSERS (
  -- Notice Table 
 CREATE TABLE NOTICE(
 
-nNo NUMBER PRIMARY KEY   --  공지사항 번호 
-nTitle  VARCHAR2(100) --  공지사항 제목  
-nContent CLOB --  공지사항 내용
+nNo NUMBER PRIMARY KEY,   --  공지사항 번호 
+nTitle  VARCHAR2(100), --  공지사항 제목  
+nContent CLOB, --  공지사항 내용
 REGDATE DATE -- 공지사항 등록일자
 );
 
-CREATE SEQUENCE notice_seq -- 공지사항 시퀀스
+CREATE SEQUENCE notice_seq; - 공지사항 시퀀스
+
+-- Product Table 
+CREATE TABLE product(
+pNo NUMBER PRIMARY KEY, -- 상품 아이디
+pTitle VARCHAR2(100),-- 상품 제목
+pPrice VARCHAR2(100),-- 상품가격
+pState VARCHAR2(20),-- 상품 상태
+pChange VARCHAR2(20),--교환여부
+pContents CLOB, --내용
+pCategory VARCHAR2(30), -- 카테고리
+pIsUsed VARCHAR2(10),-- 중고 여부
+pRegdate DATE,-- 등록일자
+orgFileName VARCHAR2(100),
+saveFileName VARCHAR2(100),
+pShipping VARCHAR2(30),
+fileSize NUMBER
+);
+
+CREATE SEQUENCE prd_seq;

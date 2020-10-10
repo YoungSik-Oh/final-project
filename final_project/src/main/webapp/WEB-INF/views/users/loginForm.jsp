@@ -10,6 +10,11 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
 <style>
+	body{
+		background-image : url("https://www.swiftdigital.com.au/wp-content/uploads/2020/05/Frenchie1-min-1024x576-1.png");
+		background-size : cover;
+	}
+
 	#logo{
 		display : block;
 		text-align : center;
@@ -21,6 +26,7 @@
 	}
 	
 	.card{
+		margin-top : 100px;
 		padding : 20px;
 	}
 	
@@ -58,7 +64,6 @@
 		  
 		  <h5>네이버 간편 로그인은 실제 운영되는 사이트가 아니면 등록된 아이디만 간편 로그인 할 수 있습니다. 등록하려면 저한테 말해주세요!</h5>
 		  <hr/>
-		  <h5>간편 로그인 지금 url이 엉켜서 잘 안됩니다. 테스트 하실 때 일반 로그인으로 해주세요</h5>
 	</div>
 <script>
 	$('#myForm').on('submit',function(){
@@ -77,7 +82,7 @@
 	var naverLogin = new naver.LoginWithNaverId(
 		{
 			clientId: "ILYl0Vs0gvAUfJYTrqnl",
-			callbackUrl: "http://localhost:8888/minseok/callback.do",
+			callbackUrl: "http://localhost:8888/acornshop/callback.do",
 			isPopup: true, /* 팝업을 통한 연동처리 여부 */
 			loginButton: {color: "green", type: 3, height: 60} /* 로그인 버튼의 타입을 지정 */
 		}

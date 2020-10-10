@@ -96,7 +96,7 @@ public class UsersDaoImple implements UsersDao{
 	}
 
 	@Override
-	public void deleteUsers(UsersDto dto) {
-		session.update("users.deleteUser", dto);
+	public void containUsers(UsersDto dto) {
+		session.update("users.containUser", dto);
 	}
 }
