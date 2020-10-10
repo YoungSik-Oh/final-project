@@ -34,7 +34,7 @@ public class ProductDaoImpl implements ProductDao{
 	
    @Override
    public int getCount(ProductDto dto) {
-      return session.selectOne("product.getCount", dto);
+      return session.selectOne("product.admingetCount", dto);
    }
 
 	@Override
