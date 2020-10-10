@@ -173,54 +173,24 @@
 			<!-- Order By End -->
 			<!-- Item List -->
 			<div class="row mt-3">
-				<div class="col-3">
+				<c:forEach var="tmp" items="${plist}">
+					<div class="col-3">
 					<div class="card">
 						<img class="card-img-top"
-							src="${pageContext.request.contextPath }/resources/images/item1.jpg"
+							src="${pageContext.request.contextPath }/upload/${tmp.saveFileName }"
 							alt="첫번째 상품">
-						<div class="card-body">
-							<h5 class="card-title">상품명</h5>
-							<p class="card-text">상품간단설명</p>
-							<a href="#" class="btn btn-primary">구매하기</a>
-						</div>
+							<div class="card-body">			
+								<input type="hidden" name="pTitle" value="${tmp.pTitle}"/>
+								<input type="hidden" name="pNo" value="${tmp.pNo}"/>
+								<input type="hidden" name="pPrice" value="${tmp.pPrice} "/>
+							   	<h5 class="card-title" >${tmp.pTitle}</h5>
+						  		<p class="card-text">${tmp.pContents}</p>
+						 		<p class="card-text">${tmp.pPrice }</p>
+			  					<a class="btn btn-primary" href="#">상품 보기</a>		
+							</div>
 					</div>
-				</div>
-				<div class="col-3">
-					<div class="card">
-						<img class="card-img-top"
-							src="${pageContext.request.contextPath }/resources/images/item2.jpg"
-							alt="두번째 상품">
-						<div class="card-body">
-							<h5 class="card-title">상품명</h5>
-							<p class="card-text">상품간단설명</p>
-							<a href="#" class="btn btn-primary">구매하기</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-3">
-					<div class="card">
-						<img class="card-img-top"
-							src="${pageContext.request.contextPath }/resources/images/item3.jpg"
-							alt="세번째 상품">
-						<div class="card-body">
-							<h5 class="card-title">상품명</h5>
-							<p class="card-text">상품간단설명</p>
-							<a href="#" class="btn btn-primary">구매하기</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-3">
-					<div class="card">
-						<img class="card-img-top"
-							src="${pageContext.request.contextPath }/resources/images/item4.jpg"
-							alt="네번째 상품">
-						<div class="card-body">
-							<h5 class="card-title">상품명</h5>
-							<p class="card-text">상품간단설명</p>
-							<a href="#" class="btn btn-primary">구매하기</a>
-						</div>
-					</div>
-				</div>
+				</div>	
+				</c:forEach>	
 			</div>
 			<!-- Item List End -->
 			<!-- Category -->

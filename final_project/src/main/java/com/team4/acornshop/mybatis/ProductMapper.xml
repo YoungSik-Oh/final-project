@@ -12,7 +12,7 @@
 	</select>
 	
 	<select id="getList" resultType="productDto">
-		SELECT pId,pTitle,pContents,pPrice
+		SELECT *
 			FROM product
 	</select>
 </mapper>

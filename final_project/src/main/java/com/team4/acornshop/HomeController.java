@@ -7,16 +7,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.team4.acornshop.service.NoticeService;
+import com.team4.acornshop.service.ProductService;
 
 
 @Controller
 public class HomeController {
 	@Autowired
 	private NoticeService noticeService;
+	@Autowired
+	private ProductService productService;
 	
 
 	@RequestMapping("/main")
 	public String home(HttpServletRequest request) {
+		productService.getList(request);
 		noticeService.getList(request);
 		return "main";
 	}	
