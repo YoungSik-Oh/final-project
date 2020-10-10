@@ -31,4 +31,8 @@
 		SET nViewCount=nViewCount+1
 		WHERE nNo=#{nNo}
 	</update> 
+	<select id="getCount" parameterType="noticeDto" resultType="int">
+      SELECT NVL(MAX(ROWNUM), 0)
+      FROM notice
+   </select>
 </mapper>

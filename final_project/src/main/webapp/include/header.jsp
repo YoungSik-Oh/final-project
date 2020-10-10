@@ -25,7 +25,7 @@
 						</c:when>
 						<c:otherwise>
 							<strong>${id }</strong>님
-							<a href="mypage/mypage.do" class="text-dark">마이페이지</a>
+							<a href="${pageContext.request.contextPath}/mypage/mypage.do" class="text-dark">마이페이지</a>
 							<a href="javascript:" class="text-danger" id="logout">로그아웃</a><br/>
 							<c:if test="${not empty isAdmin }"><a href="${pageContext.request.contextPath}/admin/main.do">관리자 페이지</a></c:if>
 						</c:otherwise>

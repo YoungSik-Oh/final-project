@@ -76,7 +76,7 @@ public class UsersController {
 	public String logout(HttpSession session) {
 		session.invalidate();
 		
-		return "main";
+		return "redirect:/main.do";
 	}
 	
 	//로그아웃 ajax
