@@ -1,63 +1,51 @@
 package com.team4.acornshop.dto;
 
-public class ProductDto {
-	private String seller;
-	private int pId;
-	private String pCategory;
-	private String pTitle;
-	private int pPrice;
-	private String pMainImage;
-	private String pContents;
-	private String pImage1;
-	private String pImage2;
-	private String pImage3;
-	private String pImage4;
-	private String pIsUsed;
-	private String pRegdate;
-	private int pStock;
-	
-	public ProductDto() {}
+import org.springframework.web.multipart.MultipartFile;
 
-	public ProductDto(String seller, int pId, String pCategory, String pTitle, int pPrice, String pMainImage, String pContents,
-			String pImage1, String pImage2, String pImage3, String pImage4, String pIsUsed, String pRegdate,
-			int pStock) {
+public class ProductDto {
+	private int pNo; // 상품 아이디
+	private String pTitle; // 상품 제목
+	private int pPrice; // 상품가격
+	private String pShipping; //배송비 포함
+	private String pState; // 상품 상태
+	private String pChange;//교환여부
+	private String pContents; // 내용
+	private String pCategory; // 카테고리
+	private String pIsUsed; // 중고 여부
+	private String pRegdate; // 등록일자
+	private String orgFileName;
+	private String saveFileName;
+	private long fileSize;
+	private MultipartFile myFile;
+	
+	public ProductDto () {}
+
+	public ProductDto(int pNo, String pTitle, int pPrice, String pShipping, String pState, String pChange,
+			String pContents, String pCategory, String pIsUsed, String pRegdate, String orgFileName,
+			String saveFileName, long fileSize, MultipartFile myFile) {
 		super();
-		this.seller = seller;
-		this.pId = pId;
-		this.pCategory = pCategory;
+		this.pNo = pNo;
 		this.pTitle = pTitle;
 		this.pPrice = pPrice;
-		this.pMainImage = pMainImage;
+		this.pShipping = pShipping;
+		this.pState = pState;
+		this.pChange = pChange;
 		this.pContents = pContents;
-		this.pImage1 = pImage1;
-		this.pImage2 = pImage2;
-		this.pImage3 = pImage3;
-		this.pImage4 = pImage4;
+		this.pCategory = pCategory;
 		this.pIsUsed = pIsUsed;
 		this.pRegdate = pRegdate;
-		this.pStock = pStock;
-	}
-	public String getseller() {
-		return seller;
-	}
-	public void setseller(String seller) {
-		this.seller = seller;
-	}
-	
-	public int getpId() {
-		return pId;
+		this.orgFileName = orgFileName;
+		this.saveFileName = saveFileName;
+		this.fileSize = fileSize;
+		this.myFile = myFile;
 	}
 
-	public void setpId(int pId) {
-		this.pId = pId;
+	public int getpNo() {
+		return pNo;
 	}
 
-	public String getpCategory() {
-		return pCategory;
-	}
-
-	public void setpCategory(String pCategory) {
-		this.pCategory = pCategory;
+	public void setpNo(int pNo) {
+		this.pNo = pNo;
 	}
 
 	public String getpTitle() {
@@ -76,12 +64,28 @@ public class ProductDto {
 		this.pPrice = pPrice;
 	}
 
-	public String getpMainImage() {
-		return pMainImage;
+	public String getpShipping() {
+		return pShipping;
 	}
 
-	public void setpMainImage(String pMainImage) {
-		this.pMainImage = pMainImage;
+	public void setpShipping(String pShipping) {
+		this.pShipping = pShipping;
+	}
+
+	public String getpState() {
+		return pState;
+	}
+
+	public void setpState(String pState) {
+		this.pState = pState;
+	}
+
+	public String getpChange() {
+		return pChange;
+	}
+
+	public void setpChange(String pChange) {
+		this.pChange = pChange;
 	}
 
 	public String getpContents() {
@@ -92,36 +96,12 @@ public class ProductDto {
 		this.pContents = pContents;
 	}
 
-	public String getpImage1() {
-		return pImage1;
+	public String getpCategory() {
+		return pCategory;
 	}
 
-	public void setpImage1(String pImage1) {
-		this.pImage1 = pImage1;
-	}
-
-	public String getpImage2() {
-		return pImage2;
-	}
-
-	public void setpImage2(String pImage2) {
-		this.pImage2 = pImage2;
-	}
-
-	public String getpImage3() {
-		return pImage3;
-	}
-
-	public void setpImage3(String pImage3) {
-		this.pImage3 = pImage3;
-	}
-
-	public String getpImage4() {
-		return pImage4;
-	}
-
-	public void setpImage4(String pImage4) {
-		this.pImage4 = pImage4;
+	public void setpCategory(String pCategory) {
+		this.pCategory = pCategory;
 	}
 
 	public String getpIsUsed() {
@@ -140,12 +120,36 @@ public class ProductDto {
 		this.pRegdate = pRegdate;
 	}
 
-	public int getpStock() {
-		return pStock;
+	public String getOrgFileName() {
+		return orgFileName;
 	}
 
-	public void setpStock(int pStock) {
-		this.pStock = pStock;
+	public void setOrgFileName(String orgFileName) {
+		this.orgFileName = orgFileName;
+	}
+
+	public String getSaveFileName() {
+		return saveFileName;
+	}
+
+	public void setSaveFileName(String saveFileName) {
+		this.saveFileName = saveFileName;
+	}
+
+	public long getFileSize() {
+		return fileSize;
+	}
+
+	public void setFileSize(long fileSize) {
+		this.fileSize = fileSize;
+	}
+
+	public MultipartFile getMyFile() {
+		return myFile;
+	}
+
+	public void setMyFile(MultipartFile myFile) {
+		this.myFile = myFile;
 	}
 	
 }

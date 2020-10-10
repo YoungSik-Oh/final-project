@@ -83,4 +83,10 @@
 		SELECT email FROM pusers
 		WHERE email = #{email}
 	</select>
+	
+	<update id="deleteUser" parameterType="com.team4.acornshop.dto.UsersDto">
+		UPDATE pusers
+		set disabled = #{disabled}
+		WHERE id = #{id}
+	</update>
 </mapper>

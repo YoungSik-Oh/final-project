@@ -1,5 +1,4 @@
 package com.team4.acornshop.dao;
-
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -29,7 +28,5 @@ public class ProductDaoImpl implements ProductDao{
 		// TODO Auto-generated method stub
 		return session.selectList("product.getList");
 	}
-
-	
 
 }

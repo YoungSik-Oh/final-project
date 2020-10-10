@@ -38,8 +38,7 @@
 					<div class="card-body">
 						<h5 class="card-title">
 							<a
-								href="${pageContext.request.contextPath}/product/productdetail.do">내가
-								올린 상품</a>
+								href="${pageContext.request.contextPath}//mypage/myproductList.do">내가 올린 상품</a>
 						</h5>
 						<p class="card-text">내가 올린 상품을 확인 할 수 있습니다.</p>
 					</div>
@@ -72,16 +71,6 @@
 							<a href="#">CASH</a>
 						</h5>
 						<p class="card-text">CASH충전 및 사용내역을 확인 할 수 있습니다.</p>
-					</div>
-				</div>
-			</div>
-			<div class="col mb-4">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">
-							<a href="orderdetail.do">주문상세</a>
-						</h5>
-						<p class="card-text">주문상세내역 확인</p>
 					</div>
 				</div>
 			</div>

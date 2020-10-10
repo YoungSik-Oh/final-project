@@ -1,5 +1,6 @@
 package com.team4.acornshop.controller;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -14,30 +15,26 @@ import com.team4.acornshop.service.ProductService;
 
 @Controller
 public class ProductController {
+	
 	@Autowired
-	private ProductService productservice;
+	private ProductService productService;
 	
-	@RequestMapping("/main")
-	public ModelAndView getList(HttpServletRequest request, 
-			ModelAndView mView) {
-		productservice.getList(request);
-		mView.setViewName("main");
-		return mView;
+	@RequestMapping("/product/productInsertform")
+	public String productform() {
+		return "product/productInsertform";
 	}
 	
-	@RequestMapping("/product/product_insert_form")
-	public ModelAndView insertForm(ModelAndView mView) {
-		mView.setViewName("product/product_insert_form");
-		return mView;
+	@RequestMapping(value= "/product/upload", method = RequestMethod.POST)
+	public ModelAndView upload(ProductDto dto,ModelAndView v, HttpServletRequest request) {
+		productService.uploadProduct(dto, v, request);
+		v.setViewName("product/upload");
+		return v;
 	}
 	
-	@RequestMapping(value = "/product/product_insert", method=RequestMethod.POST)
-	public ModelAndView insert(ProductDto dto, ModelAndView mView, HttpSession session) {
-		//dto 에 글 작성자 담기 
-		String seller=(String)session.getAttribute("id");
-		dto.setseller(seller);
-		productservice.saveContent(dto);
-		mView.setViewName("product/product_insert");
-		return mView;
+	@RequestMapping("/mypage/myproductList")
+	public ModelAndView productList(ModelAndView v) {
+		v.setViewName("mypage/myproductList");
+		return v;
 	}
+	
 }

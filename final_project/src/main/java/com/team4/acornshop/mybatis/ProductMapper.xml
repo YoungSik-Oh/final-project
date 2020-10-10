@@ -3,11 +3,9 @@
 <mapper namespace="product">
 	<insert id="insert" parameterType="productDto">
 		INSERT INTO product
-		(pId,pCategory,pTitle,pPrice,pMainImage,pContents,pImage1,pImage2,pImage3,pImage4,pIsUsed,pRegdate)
-		VALUES(product_seq.NEXTVAL, #{pCategory}, #{pTitle},
-			#{pPrice}, #{pMainImage}, #{pContents},#{pImage1},#{pImage2},#{pImage3},#{pImage4},#{pIsUsed},#{pStock} ,SYSDATE)
+		(pNo, pTitle, pPrice, pShipping, pChange, pContents, pCategory, pIsUsed, pRegdate,orgFileName, saveFileName, fileSize)
+		VALUES(prd_seq.NEXTVAL,#{pTitle},#{pPrice},#{pShipping},#{pChange},#{pContents},#{pCategory},#{pIsUsed},SYSDATE,#{orgFileName},#{saveFileName},#{fileSize})
 	</insert>
-	
 	<select id="getData" parameterType="int" resultType="productDto">
 		SELECT pTitle,pContents,pPrice
 			FROM product where pId=#{pId}

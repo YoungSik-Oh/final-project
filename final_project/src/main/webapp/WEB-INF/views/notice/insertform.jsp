@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 </head>
 <body>
+<%@ include file="/include/header.jsp" %>
 <div class="container">
 	<h1 class="text-center">공지사항 등록</h1>
 	<form action="insert.do" method="post">
@@ -26,6 +27,6 @@
 		</div>
 	</form>
 </div>
-
+<%@ include file="/include/footer.jsp" %>
 </body>
 </html>

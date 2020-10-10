@@ -27,28 +27,29 @@
 </style>
 </head>
 <body>
+<%@ include file="/include/header.jsp" %>
 <div class="container">
 	<h1 class="text-center">header 부분 </h1>
 	<h3 class="text-center">공지사항</h3>
 	<div class="float-right"> 
-	/c:if=${dto.isAdmin==1 }/
-		<a href="insertform.do">새글 작성 (관리자만 글 작성 할 수 있음) </a>
+		<c:if test="${not empty isAdmin }">
+			<a href="insertform.do">공지사항 작성 </a>
+		</c:if>
 	</div>
 	<br/>
 	<hr/>
 	<ul class="card">
-		<%-- <c:forEach var="tmp" items="${list }"> --%>
+		<c:forEach var="tmp" items="${list }">
 			<li id="comment${tmp.nNo }" > 
 				<div>
-					<h3 class="card-title"><a href="detail.do?num=${tmp.nNo }">제목 : ${tmp.nTitle }</a></h3>  조회수 : ${tmp.nViewCount }
+					<h3 class="card-title"><a href="detail.do?nNo=${tmp.nNo }">제목 : ${tmp.nTitle }</a></h3>  조회수 : ${tmp.nViewCount }
 					<span>작성날짜 : ${tmp.regdate } </span>
 					<a data-num="${tmp.nNo }" href="javascript:" class="isShow">더보기</a>
-					<p class="notice-detail">/asdfasdfas6732894573298/${tmp.nContent }</p>
+					<p class="notice-detail">${tmp.nContent }</p>
 				</div>
 			</li>
-		
 		<hr/>
-		<%-- </c:forEach> --%>
+		</c:forEach>
 	</ul>
 </div>
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.5.1.js"></script>
@@ -61,5 +62,6 @@
 		.slideToggle();
 	});
 </script>
+<%@ include file="/include/footer.jsp" %>
 </body>
 </html>
