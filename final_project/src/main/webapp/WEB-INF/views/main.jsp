@@ -47,9 +47,16 @@
 					</a>
 				</div>
 				<div class="col">
-					<form class="form-inline my-2 my-lg-0">
-						<input class="form-control mr-sm-2" type="search"
-							placeholder="찾고싶은 상품을 검색하세요" aria-label="Search">
+					<form action="product/searchProduct.do" class="form-inline my-2 my-lg-0">
+ 					<label for="condition">검색조건</label> 
+					<select name="condition" id="condition"> 
+ 						<option value="a" <c:if test="${condition eq 'a' }">selected</c:if>>남성의류</option>
+ 						<option value="b" <c:if test="${condition eq 'b' }">selected</c:if>>여성의류</option>
+ 						<option value="c" <c:if test="${condition eq 'c' }">selected</c:if>>헬스/건강식품</option>
+						<option value="d" <c:if test="${condition eq 'd' }">selected</c:if>>전자기기</option>
+ 					</select>
+						<input value="${keyword }" type="text" name="keyword"  class="form-control mr-sm-2"
+ 							placeholder="찾고싶은 상품을 검색하세요">
 						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">검색</button>
 					</form>
 				</div>
