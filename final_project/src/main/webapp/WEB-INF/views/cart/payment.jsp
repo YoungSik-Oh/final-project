@@ -20,7 +20,7 @@
 	
 	function popup(){
 		var url="destination.do";
-		var name="popup test";
+		var name="배송지 변경";
 		var option="width=500px, height=500px"
 		window.open(url, name, option);
 	}

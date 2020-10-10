@@ -58,5 +58,12 @@ public class CartController {
 		mView.setViewName("redirect:/cart.do");
 		return mView;
 	}
+	@RequestMapping("/cart/destination")
+	public ModelAndView destination(ModelAndView mView, HttpSession session) {
+		String id = (String)session.getAttribute("id");
+		userService.myPage(id, mView);
+		mView.setViewName("cart/destination");
+		return mView;
+	}
 	
 }
