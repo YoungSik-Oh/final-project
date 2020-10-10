@@ -13,7 +13,7 @@
 			FROM
 				(SELECT *
 				FROM product
-				where id=id
+				where id=#{id}
 				ORDER BY pNo DESC) result1)
 		WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
 	</select>
@@ -28,5 +28,8 @@
 		FROM product
 		WHERE pNo=#{pNo}
 	</select>
-	
+	<delete id="delete" parameterType="int">
+		DELETE FROM product
+		WHERE pNo=#{pNo}
+	</delete>
 </mapper> 

@@ -35,5 +35,11 @@ public class ProductDaoImpl implements ProductDao{
 	public ProductDto getData(int pNo) {
 		return session.selectOne("product.getData", pNo);
 	}
+
+	@Override
+	public void delete(int pNo) {
+			session.delete("product.delete", pNo);
+		
+	}
 	
 }

@@ -25,6 +25,7 @@
 					<th>상품 판매자</th>
 					<th>상품가격</th>
 					<th>등록일자</th>
+					<th>지우기</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -35,6 +36,7 @@
 						<td>${tmp.id }</td>
 						<td>${tmp.pPrice}</td>
 						<td>${tmp.pRegdate}</td>
+						<td><a href="${pageContext.request.contextPath }/product/delete.do?pNo=${tmp.pNo }" id="del">지우기</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -9,5 +9,6 @@ public interface ProductDao {
 	public List<ProductDto> getList(ProductDto dto);
 	public int getCount();
 	public ProductDto getData(int pNo);
+	public void delete(int pNo);
 	
 }

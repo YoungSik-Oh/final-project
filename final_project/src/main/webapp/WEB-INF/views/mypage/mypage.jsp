@@ -12,7 +12,6 @@
 	<%@ include file="/include/header.jsp" %>
 	<div class="container">
 		<div class="text-center">
-			<h1>header 부분</h1>
 			<h1>MY PAGE</h1>
 		</div>
 		<div class="row row-cols-1 row-cols-md-2 text-center">

@@ -91,6 +91,7 @@ public class ProductServiceImpl implements ProductService {
 		ProductDto dto=new ProductDto();
 		dto.setStartRowNum(startRowNum);
 		dto.setEndRowNum(endRowNum);
+		dto.setId(id);
 		List<ProductDto> productList=productDao.getList(dto);
 		
 		//상품 목록 얻어오기
@@ -126,6 +127,11 @@ public class ProductServiceImpl implements ProductService {
 
 		request.setAttribute("productdetail", productdetail);
 		
+	}
+
+	@Override
+	public void deleteContent(int pNo, HttpServletRequest request) {
+		productDao.delete(pNo);
 	}
 
 	
