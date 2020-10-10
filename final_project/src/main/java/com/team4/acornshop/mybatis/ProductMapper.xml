@@ -3,8 +3,25 @@
 <mapper namespace="product">
 	<insert id="insert" parameterType="com.team4.acornshop.dto.ProductDto">
 		INSERT INTO product
-		(pNo, pTitle, pPrice, pShipping, pChange, pContents, pCategory, pIsUsed, pRegdate,orgFileName, saveFileName, fileSize)
-		VALUES(prd_seq.NEXTVAL,#{pTitle},#{pPrice},#{pShipping},#{pChange},#{pContents},#{pCategory},#{pIsUsed},SYSDATE,#{orgFileName},#{saveFileName},#{fileSize})
+		(pNo, id, pTitle, pPrice, pShipping, pChange, pContents, pCategory, pIsUsed, pRegdate,orgFileName, saveFileName, fileSize)
+		VALUES(prd_seq.NEXTVAL, #{id},#{pTitle},#{pPrice},#{pShipping},#{pChange},#{pContents},#{pCategory},#{pIsUsed},SYSDATE,#{orgFileName},#{saveFileName},#{fileSize})
 	</insert>
-
+	
+	<select id="userAdminGetList" resultType="com.team4.acornshop.dto.ProductDto" parameterType="com.team4.acornshop.dto.ProductDto">
+		SELECT *
+         FROM
+         (SELECT result1.*, ROWNUM AS rnum
+         FROM
+            (SELECT *
+            FROM product
+            where id = #{id}
+            ORDER BY pNo ASC) result1)
+      WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
+	</select>
+   
+   <select id="getCount" parameterType="com.team4.acornshop.dto.ProductDto" resultType="int">
+      SELECT NVL(MAX(ROWNUM), 0)
+      FROM product
+      WHERE id = #{id}
+   </select>
 </mapper> 

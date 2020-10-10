@@ -50,6 +50,7 @@ public class ProductServiceImpl implements ProductService {
 		String id=(String)request.getSession().getAttribute("id");
 		
 		//세션에서 읽어낸 파일 업로더의 아이디 
+		dto.setId(id);
 		dto.setOrgFileName(orgFileName);
 		dto.setSaveFileName(saveFileName);
 		dto.setFileSize(fileSize);
