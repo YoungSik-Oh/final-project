@@ -4,7 +4,6 @@
 <br/>
 <div class="container text-center">
 
-
 <table class="table table-borderless ">
   <thead>
     <tr>

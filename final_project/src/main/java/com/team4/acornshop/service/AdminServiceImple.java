@@ -90,7 +90,6 @@ public class AdminServiceImple implements AdminService{
 		//비교해서 true이면 성공
 		isvalid = BCrypt.checkpw(inputPwd, dbPwd);
 		
-		
 		map.put("isvalid", isvalid);
 		
 		
@@ -101,9 +100,23 @@ public class AdminServiceImple implements AdminService{
 	public Map<String, Object> deleteUsers(UsersDto dto) {
 		Map<String, Object> map = new HashMap<>();
 		dto.setDisabled("yes");
-		usersDao.deleteUsers(dto);
+		usersDao.containUsers(dto);
 		
 		map.put("setDisabled", "yes");
+		return map;
+	}
+
+	@Override
+	public Map<String, Object> addUsers(UsersDto dto) {
+		String id = dto.getId();
+		
+		Map<String, Object> map = new HashMap<>();
+		
+		dto.setDisabled("no");
+		usersDao.containUsers(dto);
+		
+		map.put("setDisabled", "no");
+		
 		return map;
 	}	
 }

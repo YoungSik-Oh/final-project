@@ -15,5 +15,5 @@ public interface UsersDao {
 	public void updateFindNewPwd(UsersDto dto);
 	public boolean emailConfirm(String email);
 	//admin controller에서 사용
-	public void deleteUsers(UsersDto dto);
+	public void containUsers(UsersDto dto);
 }
