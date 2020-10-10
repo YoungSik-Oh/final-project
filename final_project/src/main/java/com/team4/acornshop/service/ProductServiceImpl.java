@@ -90,11 +90,12 @@ public class ProductServiceImpl implements ProductService {
 		ProductDto dto=new ProductDto();
 		dto.setStartRowNum(startRowNum);
 		dto.setEndRowNum(endRowNum);
+		dto.setId(id);
 		List<ProductDto> productList=productDao.getList(dto);
 		
 		//상품 목록 얻어오기
 		//전체 row 의 갯수 
-		int totalRow=productDao.getCount();
+		int totalRow=productDao.getCount(dto);
 		
 		//전체 페이지의 갯수 구하기
 		int totalPageCount=

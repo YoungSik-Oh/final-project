@@ -34,14 +34,9 @@
 			FROM
 				(SELECT *
 				FROM product
-				where id=id
+				where id= #{id}
 				ORDER BY pNo DESC) result1)
 		WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
-	</select>
-	
-	<select id="getCount" resultType="int">
-		SELECT NVL(MAX(ROWNUM), 0)
-		FROM product
 	</select>
 	
 	<select id="getData" parameterType="int" resultType="com.team4.acornshop.dto.ProductDto">
