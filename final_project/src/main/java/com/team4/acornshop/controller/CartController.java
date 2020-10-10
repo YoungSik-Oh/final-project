@@ -32,11 +32,12 @@ public class CartController {
 	@RequestMapping("/cart/insert")
 	public String insert(CartDto dto, HttpSession session) {
 		String id=(String)session.getAttribute("id");
+		
 		System.out.println(id);
-		System.out.println(dto.getpId());
+		System.out.println(dto.getpNo());
 		System.out.println(dto.getpTitle());
 		System.out.println(dto.getpPrice());
-		dto.setid(id);
+		dto.setId(id);
 		cartService.insert(dto);
 		return "redirect:../main.do";
 	}
@@ -51,8 +52,9 @@ public class CartController {
 	}
 	
 	@RequestMapping("/cart/delete")
-	public ModelAndView delete(HttpServletRequest request,@RequestParam int cartId, ModelAndView mView) {
-		cartService.deleteproduct(cartId, request);
+	public ModelAndView delete(HttpServletRequest request,@RequestParam int pNo, ModelAndView mView) {
+		cartService.deleteproduct(pNo, request);
+		System.out.println(pNo);
 		mView.setViewName("redirect:/cart.do");
 		return mView;
 	}

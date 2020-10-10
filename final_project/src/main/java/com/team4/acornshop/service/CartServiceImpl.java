@@ -40,17 +40,17 @@ public class CartServiceImpl implements CartService{
 	}
 	
 	@Override
-	public void getpData(String pId, HttpServletRequest request) {
+	public void getpData(int pNo, HttpServletRequest request) {
 		// TODO Auto-generated method stub
 		//삭제할 파일의 정보를 읽어온다.
-		CartDto dto=cartDao.getData(pId);
-		request.setAttribute("dto", dto);
+		CartDto cdto=cartDao.getData(pNo);
+		request.setAttribute("cdto", cdto);
 	}
 
 	@Override
-	public void deleteproduct(int cartId, HttpServletRequest request) {
+	public void deleteproduct(int pNo, HttpServletRequest request) {
 		// TODO Auto-generated method stub
-		cartDao.deleteproduct(cartId);
+		cartDao.deleteproduct(pNo);
 	}
 	
 }

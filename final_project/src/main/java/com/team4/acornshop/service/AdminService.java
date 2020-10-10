@@ -14,4 +14,5 @@ public interface AdminService {
 	public Map<String, Object> confirmPwd(HttpSession session, UsersDto dto);
 	public Map<String, Object> deleteUsers(UsersDto dto);
 	public Map<String, Object> addUsers(UsersDto dto);
+	public void userAdminGetList(ModelAndView m, HttpServletRequest request, String id);
 }

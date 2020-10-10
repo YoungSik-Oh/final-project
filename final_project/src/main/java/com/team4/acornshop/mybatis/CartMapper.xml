@@ -3,8 +3,8 @@
 <mapper namespace="cart">
 	<insert id="insert" parameterType="cartDto">
 		INSERT INTO cart
-		(cartId, id, pId, pTitle, pPrice, pCheck)
-		VALUES(cart_seq.NEXTVAL, #{id}, #{pId}, #{pTitle}, #{pPrice}, 0)
+		(id, pNo, pTitle, pPrice, pCheck)
+		VALUES(#{id}, #{pNo}, #{pTitle}, #{pPrice}, 0)
 	</insert>
 	
 	<select id="getList" resultType="cartDto">
@@ -20,13 +20,13 @@
 	</select>
 	
 	<select id="getData" parameterType="String" resultType="cartDto">
-		SELECT pTitle,pStock,pPrice
+		SELECT *
 		FROM cart
-		WHERE pId=#{pId}
+		WHERE pNo=#{pNo}
 	</select>
 	
 	<delete id="deleteproduct" parameterType="int">
 		DELETE FROM cart
-		WHERE cartId=#{cartId}
+		WHERE pNo=#{pNo} AND id=#{id}
 	</delete>
 </mapper>

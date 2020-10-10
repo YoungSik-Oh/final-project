@@ -57,14 +57,14 @@
 		</thead>
 		<tbody>
 		<c:set var = "total" value = "0" />
-		<c:forEach var="tmp" items="${clist}">
+		<c:forEach var="clists" items="${clist}">
 			<tr>
 				<td class="self">
-					<input type="checkbox" class="chk" id="${tmp.cartId }" name="chksum" value="${tmp.pPrice }" checked/>
+					<input type="checkbox" class="chk" id="${clists.pNo }" name="chksum" value="${clists.pPrice }" checked/>
 					상품이미지
 				</td>
 				<td>
-					<div>${tmp.pTitle }</div>
+					<div>${clists.pTitle }</div>
 					<div class="float-left"></div>
 					<hr class="made" />
 					<div>
@@ -76,10 +76,10 @@
 					<a href="javascript:deleteConfirm();">삭제</a>
 				</td>
 				<td>
-					${tmp.pPrice }<span>원</span>
+					${clists.pPrice }<span>원</span>
 				</td>
 			</tr>
-			<c:set var= "total" value="${total + tmp.pPrice}"/>
+			<c:set var= "total" value="${total + clists.pPrice}"/>
 		</c:forEach>
 			<tr>
 				<td>
@@ -152,7 +152,7 @@ function deleteConfirm(){
     //그냥 삭제 =
 	var isDelete=confirm("이 상품을 삭제 하시겠습니까?");
 	if(isDelete){
-		location.href="delete.do?cartId=${cartId}";
+		location.href="delete.do?pNo=${clists.pNo}";
 	}
 }
 //input요소 아이디의 값 가져오기 미완성

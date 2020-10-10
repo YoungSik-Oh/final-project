@@ -1,58 +1,45 @@
 package com.team4.acornshop.dto;
 
 public class CartDto {
-	private int cartId;
 	private String id;
-	private String pId;
-	private String pMainImage;
+	private int pNo;
+	private String saveFileName;
 	private String pTitle;
-	private int pStock;
 	private int pPrice;
 	
 	public CartDto() {}
-	
-	public CartDto(int cartId, String id, String pId, String pMainImage, String pTitle, int pStock,
-			int pPrice) {
+
+	public CartDto(String id, int pNo, String saveFileName, String pTitle, int pPrice) {
 		super();
-		this.cartId = cartId;
 		this.id = id;
-		this.pId = pId;
-		this.pMainImage = pMainImage;
+		this.pNo = pNo;
+		this.saveFileName = saveFileName;
 		this.pTitle = pTitle;
-		this.pStock = pStock;
 		this.pPrice = pPrice;
 	}
 
-	public int getCartId() {
-		return cartId;
-	}
-
-	public void setCartId(int cartId) {
-		this.cartId = cartId;
-	}
-
-	public String getid() {
+	public String getId() {
 		return id;
 	}
 
-	public void setid(String id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-	public String getpId() {
-		return pId;
+	public int getpNo() {
+		return pNo;
 	}
 
-	public void setpId(String pId) {
-		this.pId = pId;
+	public void setpNo(int pNo) {
+		this.pNo = pNo;
 	}
 
-	public String getpMainImage() {
-		return pMainImage;
+	public String getSaveFileName() {
+		return saveFileName;
 	}
 
-	public void setpMainImage(String pMainImage) {
-		this.pMainImage = pMainImage;
+	public void setSaveFileName(String saveFileName) {
+		this.saveFileName = saveFileName;
 	}
 
 	public String getpTitle() {
@@ -61,14 +48,6 @@ public class CartDto {
 
 	public void setpTitle(String pTitle) {
 		this.pTitle = pTitle;
-	}
-
-	public int getpStock() {
-		return pStock;
-	}
-
-	public void setpStock(int pStock) {
-		this.pStock = pStock;
 	}
 
 	public int getpPrice() {

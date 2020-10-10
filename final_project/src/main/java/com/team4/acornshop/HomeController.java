@@ -20,7 +20,7 @@ public class HomeController {
 
 	@RequestMapping("/main")
 	public String home(HttpServletRequest request) {
-		productService.getList(request);
+		productService.getList2(request);
 		noticeService.getList(request);
 		return "main";
 	}	

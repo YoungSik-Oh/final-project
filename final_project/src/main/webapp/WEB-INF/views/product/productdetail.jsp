@@ -8,11 +8,9 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 </head>
 <body>
+<%@ include file="/include/header.jsp" %>
 <div class="container">
-<div class="text-center"> fixed-top
-	<h1 >header 부분</h1>
-</div>
-
+<hr/>
 	<div class="row no-gutters bg-light position-relative">
 	  <div class="col-md-6 mb-md-0 p-md-4">
 	  	<div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
@@ -39,15 +37,22 @@
 		</div>
 	  </div>
 	  
+	  
 	  <div class="col-md-6 position-static p-4 pl-md-0">
-	    <ul class="list-group list-group-flush">
-		  <li class="list-group-item">상품 이름</li>
-		  <li class="list-group-item">상품 가격</li>
-		  <li class="list-group-item">등록 날짜</li>
-		  <li class="list-group-item">배송비/거래지역</li>
-		  <li class="list-group-item">장바구니</li>
-		</ul>
-	  </div>	  
+	  <form action="${pageContext.request.contextPath }/cart/insert.do">
+	  <input type="hidden" name="pNo" value="${productdetail.pNo }"/>
+	  <input type="hidden" name="pTitle" value="${productdetail.pTitle }"/>
+	  <input type="hidden" name="pPrice" value="${productdetail.pPrice }"/>
+		    <ul class="list-group list-group-flush">
+			  <li class="list-group-item">${productdetail.pTitle }</li>
+			  <li class="list-group-item">${productdetail.pPrice }</li>
+			  <li class="list-group-item">${productdetail.pRegdate }</li>
+			  <li class="list-group-item">2,500 원</li>
+			  <li class="list-group-item"><button type="submit">장바구니에 담기</button></li>
+			</ul>
+	  </form>
+	  </div>
+	 	  
 	  
 	</div>
 	<hr/>
@@ -68,16 +73,13 @@
 	<hr/>
 	
 	<ul class="list-group">
-	 <!-- div로 각자 해야하는건지 .... 잘 모르겠구만 ... ㅠ -->
-	  <li class="list-group-item">상품 정보</li>
-	  <li class="list-group-item">상품 후기</li>
+	  <li class="list-group-item"></li>
+	  <li class="list-group-item">${productdetail.pContents }</li>
 	  <li class="list-group-item">상품 문의</li>
 	  <li class="list-group-item">판매자의 다른 상품</li>
 	</ul>
-function
 
-<h1 class="text-center">footer 부분 </h1>
-
+<%@ include file="/include/footer.jsp" %>
 </div>
 </body>
 </html>

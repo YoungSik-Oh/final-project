@@ -11,6 +11,6 @@ public interface CartService {
 	public void insert(CartDto dto);
 	public void getList(HttpServletRequest request,CartDto dto);
 	public void getList2(HttpServletRequest request,CartDto dto);
-	public void getpData(String pId, HttpServletRequest request);
-	public void deleteproduct(int cartId, HttpServletRequest request);
+	public void getpData(int pNo, HttpServletRequest request);
+	public void deleteproduct(int pNo, HttpServletRequest request);
 }

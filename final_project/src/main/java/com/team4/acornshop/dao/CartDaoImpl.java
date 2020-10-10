@@ -25,9 +25,9 @@ public class CartDaoImpl implements CartDao{
 	}
 
 	@Override
-	public CartDto getData(String pId) {
+	public CartDto getData(int pNo) {
 		// TODO Auto-generated method stub
-		return session.selectOne("cart.getData", pId);
+		return session.selectOne("cart.getData", pNo);
 	}
 
 	@Override
@@ -37,9 +37,9 @@ public class CartDaoImpl implements CartDao{
 	}
 
 	@Override
-	public void deleteproduct(int cartId) {
+	public void deleteproduct(int pNo) {
 		// TODO Auto-generated method stub
-		session.selectOne("users.delete", cartId);
+		session.selectOne("users.delete", pNo);
 	}
 
 }

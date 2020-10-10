@@ -186,7 +186,7 @@
 							   	<h5 class="card-title" >${tmp.pTitle}</h5>
 						  		<p class="card-text">${tmp.pContents}</p>
 						 		<p class="card-text">${tmp.pPrice }</p>
-			  					<a class="btn btn-primary" href="#">상품 보기</a>		
+			  					<a class="btn btn-primary" href="${pageContext.request.contextPath }/product/productdetail.do?pNo=${tmp.pNo}">상품 보기</a>		
 							</div>
 					</div>
 				</div>	
