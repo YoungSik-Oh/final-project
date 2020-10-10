@@ -8,4 +8,7 @@ public interface ProductDao {
 	public void insert(ProductDto dto);
 	public List<ProductDto> userAdminGetList(ProductDto dto);
 	public int getCount(ProductDto dto);
+	public List<ProductDto> getList(ProductDto dto);
+	public int getCount();
+	public ProductDto getData(int pNo);
 }

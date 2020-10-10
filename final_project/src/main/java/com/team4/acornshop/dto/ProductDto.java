@@ -17,18 +17,15 @@ public class ProductDto {
 	private String saveFileName;
 	private long fileSize;
 	private MultipartFile myFile;
-	private String id;
 	private int startRowNum;
 	private int endRowNum;
-	private int prevNum; //이전글의 글번호
-	private int nextNum; //다음글의 글번호
+	private String id;
 	
 	public ProductDto () {}
 
 	public ProductDto(int pNo, String pTitle, int pPrice, String pShipping, String pState, String pChange,
 			String pContents, String pCategory, String pIsUsed, String pRegdate, String orgFileName,
-			String saveFileName, long fileSize, MultipartFile myFile, String id, int startRowNum, int endRowNum,
-			int prevNum, int nextNum) {
+			String saveFileName, long fileSize, MultipartFile myFile, int startRowNum, int endRowNum, String id) {
 		super();
 		this.pNo = pNo;
 		this.pTitle = pTitle;
@@ -44,11 +41,9 @@ public class ProductDto {
 		this.saveFileName = saveFileName;
 		this.fileSize = fileSize;
 		this.myFile = myFile;
-		this.id = id;
 		this.startRowNum = startRowNum;
 		this.endRowNum = endRowNum;
-		this.prevNum = prevNum;
-		this.nextNum = nextNum;
+		this.id = id;
 	}
 
 	public int getpNo() {
@@ -163,14 +158,6 @@ public class ProductDto {
 		this.myFile = myFile;
 	}
 
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
 	public int getStartRowNum() {
 		return startRowNum;
 	}
@@ -187,21 +174,11 @@ public class ProductDto {
 		this.endRowNum = endRowNum;
 	}
 
-	public int getPrevNum() {
-		return prevNum;
+	public String getId() {
+		return id;
 	}
 
-	public void setPrevNum(int prevNum) {
-		this.prevNum = prevNum;
+	public void setId(String id) {
+		this.id = id;
 	}
-
-	public int getNextNum() {
-		return nextNum;
-	}
-
-	public void setNextNum(int nextNum) {
-		this.nextNum = nextNum;
-	}
-
-	
 }

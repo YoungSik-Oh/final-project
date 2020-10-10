@@ -9,4 +9,6 @@ import com.team4.acornshop.dto.ProductDto;
 
 public interface ProductService {
 	public void uploadProduct(ProductDto dto, ModelAndView v,HttpServletRequest request);
+	public void getList(HttpServletRequest request);
+	public void getDetail(HttpServletRequest request);
 }
