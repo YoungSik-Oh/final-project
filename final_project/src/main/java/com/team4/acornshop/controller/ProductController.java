@@ -37,5 +37,12 @@ public class ProductController {
 		return v;
 	}
 	
+	@RequestMapping("/product/productdetail")
+	public ModelAndView productdetail(HttpServletRequest request, ModelAndView m) {
+		productService.getDetail(request);
+		m.setViewName("product/productdetail");
+		return m;
+	}
+	
 	
 }

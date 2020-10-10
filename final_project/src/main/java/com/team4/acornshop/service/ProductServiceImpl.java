@@ -59,7 +59,6 @@ public class ProductServiceImpl implements ProductService {
 		
 		//dto 에 업로드된 상품정보를 담는다.
 		dto.setId(id);
-		dto.setpWriter(id);
 		dto.setOrgFileName(orgFileName);
 		dto.setSaveFileName(saveFileName);
 		dto.setFileSize(fileSize);
@@ -88,37 +87,15 @@ public class ProductServiceImpl implements ProductService {
 		//보여줄 페이지 데이터의 끝 ResultSet row 번호
 		int endRowNum=pageNum*PAGE_ROW_COUNT;
 		
-		//검색 키워드에 관련된 처리 
-		String keyword=request.getParameter("keyword"); //검색 키워드
-		String condition=request.getParameter("condition"); //검색 조건
-		System.out.println("keyword : "+keyword);
-		System.out.println("condition : "+condition);
-		if(keyword==null){//전달된 키워드가 없다면 
-			keyword=""; //빈 문자열을 넣어준다. 
-			condition="";
-		}
-//		//인코딩된 키워드를 미리 만들어 둔다. 
-		String encodedK=URLEncoder.encode(keyword);
-		
 		//검색 키워드와 startRowNum, endRowNum 을 담을  객체 생성
 		ProductDto dto=new ProductDto();
 		dto.setStartRowNum(startRowNum);
 		dto.setEndRowNum(endRowNum);
 		List<ProductDto> productList=productDao.getList(dto);
 		
-		if(!keyword.equals("")){ //만일 키워드가 넘어온다면 
-			if(condition.equals("title_filename")){
-				//검색 키워드를 FileDto 객체의 필드에 담는다. 
-				dto.setpTitle(keyword);
-				dto.setOrgFileName(keyword);	
-			}else if(condition.equals("pTitle")){
-				dto.setpTitle(keyword);
-			}else if(condition.equals("pTitle")){
-				dto.setpWriter(keyword);
-		}
 		//상품 목록 얻어오기
 		//전체 row 의 갯수 
-		int totalRow=productDao.getCount(dto);
+		int totalRow=productDao.getCount();
 		
 		//전체 페이지의 갯수 구하기
 		int totalPageCount=
@@ -139,12 +116,19 @@ public class ProductServiceImpl implements ProductService {
 		request.setAttribute("endPageNum", endPageNum);
 		request.setAttribute("pageNum", pageNum);
 		request.setAttribute("totalPageCount", totalPageCount);
-		request.setAttribute("condition", condition);
-		request.setAttribute("keyword", keyword);
-		request.setAttribute("encodedK", encodedK);
-		
 		 	
 		}
+
+	@Override
+	public void getDetail(HttpServletRequest request) {
+		int pNo=Integer.parseInt(request.getParameter("pNo"));
+		ProductDto productdetail=productDao.getData(pNo);
+
+		request.setAttribute("productdetail", productdetail);
+		
 	}
+
+	
 }
+
 

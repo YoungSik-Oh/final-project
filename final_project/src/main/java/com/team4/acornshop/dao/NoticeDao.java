@@ -16,5 +16,7 @@ public interface NoticeDao {
 	public void delete(int num);
 	
 	public void update(NoticeDto dto);
+	
+	public int getCount(NoticeDto dto);
 
 }

@@ -84,7 +84,7 @@
 		WHERE email = #{email}
 	</select>
 	
-	<update id="deleteUser" parameterType="com.team4.acornshop.dto.UsersDto">
+	<update id="containUser" parameterType="com.team4.acornshop.dto.UsersDto">
 		UPDATE pusers
 		set disabled = #{disabled}
 		WHERE id = #{id}

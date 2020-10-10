@@ -16,7 +16,7 @@
 	console.log(isValid);
 	if(isValid){
 		var id = "${id}";
-		alert(id+"님 안녕하세요 ㅎㅎ");
+		alert(id+"님  환영합니다.");
 		location.href="${pageContext.request.contextPath}/main.do";
 	}else{
 		alert("아이디 혹은 비밀번호를 확인해주세요..");

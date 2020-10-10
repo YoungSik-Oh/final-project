@@ -34,12 +34,19 @@ public class AdminController {
 		m.setViewName("admin/userAdmin");
 		return m;
 	}
-	
+
 	//관리자 페이지에서 
 	@RequestMapping("/admin/userDelete")
 	public String userDelete() {
 		
 		return"admin/userDelete";
+	}
+	
+	//관리자 페이지에서 
+	@RequestMapping("/admin/addUser")
+	public String addUser() {
+		
+		return"admin/addUser";
 	}
 	
 	//관리자 페이지에서 회원 탈퇴 시 비밀번호 입력 ajax
@@ -58,6 +65,15 @@ public class AdminController {
 	public Map<String ,Object> deleteUsers(UsersDto dto){
 		
 		Map<String ,Object> map = adminService.deleteUsers(dto);
+		return map;
+	}
+	
+	//관리자 페이지에서 비밀번호 입력하고 성공하면 pusers의 disabled에 no 값을 넣어준다.
+	@RequestMapping("/admin/addUsers")
+	@ResponseBody
+	public Map<String ,Object> addUsers(UsersDto dto){
+		String id = dto.getId();
+		Map<String ,Object> map = adminService.addUsers(dto);
 		return map;
 	}
 }

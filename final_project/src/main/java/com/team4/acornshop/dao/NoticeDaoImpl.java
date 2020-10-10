@@ -17,7 +17,6 @@ public class NoticeDaoImpl implements NoticeDao {
 	@Override
 	public void insert(NoticeDto dto) {
 		session.insert("notice.insert", dto);
-
 	}
 
 	@Override
@@ -27,14 +26,14 @@ public class NoticeDaoImpl implements NoticeDao {
 	}
 
 	@Override
-	public NoticeDto getData(int num) {
+	public NoticeDto getData(int nNo) {
 
-		return session.selectOne("notice.getData", num);
+		return session.selectOne("notice.getData", nNo);
 	}
 
 	@Override
-	public void addViewCount(int num) {
-		session.update("notice.addViewCount", num);
+	public void addViewCount(int nNo) {
+		session.update("notice.addViewCount", nNo);
 
 	}
 	@Override
@@ -45,6 +44,12 @@ public class NoticeDaoImpl implements NoticeDao {
 	@Override
 	public void update(NoticeDto dto) {
 		session.update("notice.update", dto);
+	}
+
+	@Override
+	public int getCount(NoticeDto dto) {
+		
+		return session.selectOne("notice.getCount", dto);
 	}
 
 }

@@ -4,14 +4,13 @@
 <br/>
 <div class="container text-center">
 
-
 <table class="table table-borderless ">
   <thead>
     <tr>
       <th scope="col"><a href="${pageContext.request.contextPath }/notice/list.do">공지사항</a></th>
-      <th scope="col">운영정책</th>
-      <th scope="col">이용약관</th>
-      <th scope="col">개인정보처리방침</th>
+      <th scope="col"><a href="${pageContext.request.contextPath }/operation/operation_policy.do"></a>운영정책</th>
+      <th scope="col"><a target="_blank" href="${pageContext.request.contextPath }/operation/access_terms.do">이용약관</a></th>
+      <th scope="col"><a target="_blank" href="${pageContext.request.contextPath }/operation/privacy.do">개인정보처리방침</a></th>
     </tr>
   </thead>
   <tbody>

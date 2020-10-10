@@ -27,8 +27,13 @@ public class ProductDaoImpl implements ProductDao{
 	}
 	
 	@Override
-	public int getCount(ProductDto dto) {
-		return session.selectOne("product.getCount", dto);
+	public int getCount() {
+		return session.selectOne("product.getCount");
+	}
+
+	@Override
+	public ProductDto getData(int pNo) {
+		return session.selectOne("product.getData", pNo);
 	}
 	
 }

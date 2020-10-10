@@ -19,179 +19,136 @@ public class ProductDto {
 	private MultipartFile myFile;
 	private int startRowNum;
 	private int endRowNum;
-	private String pWriter;
 	private String id;
 	
 	public ProductDto () {}
-
-	public ProductDto(int pNo, String pTitle, int pPrice, String pShipping, String pState, String pChange,
-			String pContents, String pCategory, String pIsUsed, String pRegdate, String orgFileName,
-			String saveFileName, long fileSize, MultipartFile myFile, int startRowNum, int endRowNum, String pWriter,
-			String id) {
-		super();
-		this.pNo = pNo;
-		this.pTitle = pTitle;
-		this.pPrice = pPrice;
-		this.pShipping = pShipping;
-		this.pState = pState;
-		this.pChange = pChange;
-		this.pContents = pContents;
-		this.pCategory = pCategory;
-		this.pIsUsed = pIsUsed;
-		this.pRegdate = pRegdate;
-		this.orgFileName = orgFileName;
-		this.saveFileName = saveFileName;
-		this.fileSize = fileSize;
-		this.myFile = myFile;
-		this.startRowNum = startRowNum;
-		this.endRowNum = endRowNum;
-		this.pWriter = pWriter;
-		this.id = id;
-	}
-
+	
+	public ProductDto(int pNo, String pTitle, int pPrice, String pShipping, String pState, String pChange, String pContents,
+		String pCategory, String pIsUsed, String pRegdate, String orgFileName, String saveFileName, long fileSize,
+		MultipartFile myFile, int startRowNum, int endRowNum, String id) {
+	super();
+	this.pNo = pNo;
+	this.pTitle = pTitle;
+	this.pPrice = pPrice;
+	this.pShipping = pShipping;
+	this.pState = pState;
+	this.pChange = pChange;
+	this.pContents = pContents;
+	this.pCategory = pCategory;
+	this.pIsUsed = pIsUsed;
+	this.pRegdate = pRegdate;
+	this.orgFileName = orgFileName;
+	this.saveFileName = saveFileName;
+	this.fileSize = fileSize;
+	this.myFile = myFile;
+	this.startRowNum = startRowNum;
+	this.endRowNum = endRowNum;
+	this.id = id;
+}
 	public int getpNo() {
 		return pNo;
 	}
-
 	public void setpNo(int pNo) {
 		this.pNo = pNo;
 	}
-
 	public String getpTitle() {
 		return pTitle;
 	}
-
 	public void setpTitle(String pTitle) {
 		this.pTitle = pTitle;
 	}
-
 	public int getpPrice() {
 		return pPrice;
 	}
-
 	public void setpPrice(int pPrice) {
 		this.pPrice = pPrice;
 	}
-
 	public String getpShipping() {
 		return pShipping;
 	}
-
 	public void setpShipping(String pShipping) {
 		this.pShipping = pShipping;
 	}
-
 	public String getpState() {
 		return pState;
 	}
-
 	public void setpState(String pState) {
 		this.pState = pState;
 	}
-
 	public String getpChange() {
 		return pChange;
 	}
-
 	public void setpChange(String pChange) {
 		this.pChange = pChange;
 	}
-
 	public String getpContents() {
 		return pContents;
 	}
-
 	public void setpContents(String pContents) {
 		this.pContents = pContents;
 	}
-
 	public String getpCategory() {
 		return pCategory;
 	}
-
 	public void setpCategory(String pCategory) {
 		this.pCategory = pCategory;
 	}
-
 	public String getpIsUsed() {
 		return pIsUsed;
 	}
-
 	public void setpIsUsed(String pIsUsed) {
 		this.pIsUsed = pIsUsed;
 	}
-
 	public String getpRegdate() {
 		return pRegdate;
 	}
-
 	public void setpRegdate(String pRegdate) {
 		this.pRegdate = pRegdate;
 	}
-
 	public String getOrgFileName() {
 		return orgFileName;
 	}
-
 	public void setOrgFileName(String orgFileName) {
 		this.orgFileName = orgFileName;
 	}
-
 	public String getSaveFileName() {
 		return saveFileName;
 	}
-
 	public void setSaveFileName(String saveFileName) {
 		this.saveFileName = saveFileName;
 	}
-
 	public long getFileSize() {
 		return fileSize;
 	}
-
 	public void setFileSize(long fileSize) {
 		this.fileSize = fileSize;
 	}
-
 	public MultipartFile getMyFile() {
 		return myFile;
 	}
-
 	public void setMyFile(MultipartFile myFile) {
 		this.myFile = myFile;
 	}
-
 	public int getStartRowNum() {
 		return startRowNum;
 	}
-
 	public void setStartRowNum(int startRowNum) {
 		this.startRowNum = startRowNum;
 	}
-
 	public int getEndRowNum() {
 		return endRowNum;
 	}
-
 	public void setEndRowNum(int endRowNum) {
 		this.endRowNum = endRowNum;
 	}
-
-	public String getpWriter() {
-		return pWriter;
-	}
-
-	public void setpWriter(String pWriter) {
-		this.pWriter = pWriter;
-	}
-
 	public String getId() {
 		return id;
 	}
-
 	public void setId(String id) {
 		this.id = id;
 	}
-
 	
+	
+	
+		
 }

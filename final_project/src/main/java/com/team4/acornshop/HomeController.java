@@ -1,16 +1,22 @@
 package com.team4.acornshop;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.team4.acornshop.service.NoticeService;
 
 
 @Controller
 public class HomeController {
-	
+	@Autowired
+	private NoticeService noticeService;
 	
 	@RequestMapping("/main")
-	public String home() {
-	
+	public String home(HttpServletRequest request) {
+		noticeService.getList(request);
 		return "main";
 	}
 	
@@ -48,4 +54,29 @@ public class HomeController {
 		return "mypage/orderdetail";
 	}
 
+	// 운영정책로 이동
+	@RequestMapping("/operation/operation_policy")
+	public String operationPage() {
+		
+	return "operation/operation_policy";
+	}
+	
+	// 거래금지품목 페이지로 이동
+	@RequestMapping("/product/prohibit")
+	public String prohibit2() {
+			
+	return "product/prohibit";
+	}
+	// 이용약관 페이지로 이동
+	@RequestMapping("/operation/access_terms")
+	public String access_terms() {
+
+		return "operation/access_terms";
+	}
+	// 개인정보처리방침 페이지로 이동
+		@RequestMapping("/operation/privacy")
+		public String privacy() {
+
+			return "operation/privacy";
+		}
 }
