@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 <style>
 	.container{
-		width : 800px;
+		width : 850px;
 	}
 
 	#checkId{
@@ -37,8 +37,8 @@
 </style>
 </head>
 <body>
+	<%@ include file="/include/header.jsp" %>
 	<div class="container">
-		<a href="${pageContext.request.contextPath }/main.do" class="btn btn-outline-info">메인페이지</a>
 		<c:choose>
 			<c:when test="${login eq null }">
 				<div class="card">
@@ -161,6 +161,7 @@
 				</div>
 			</c:otherwise>
 		</c:choose>
+		<%@ include file="/include/footer.jsp" %>
 	</div>
 <script>
 	//간편 로그인 시 디폴트 값 넣어주기
@@ -355,7 +356,7 @@
 						$('#email').val("");
 						$('#email').focus();
 					}else{
-						alert("이메일 인증번호가 : "+inputEmail+"로 전송되었습니다!" + rdNum);
+						alert("이메일 인증번호가 : "+inputEmail+"로 전송되었습니다!");
 						$('#ctForm').css('display','block');
 						
 						var inputRdNum = '';

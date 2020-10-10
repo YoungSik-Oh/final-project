@@ -8,6 +8,11 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <style>
+	body{
+		background-image : url("https://www.swiftdigital.com.au/wp-content/uploads/2020/05/Frenchie1-min-1024x576-1.png");
+		background-size : cover;
+	}
+
 	.container{
 		width : 500px;
 	}
@@ -20,7 +25,6 @@
 	}
 	
 	.card{
-		margin-top : 30px;
 		margin-bottom : 30px;
 		padding : 20px;
 	}
@@ -38,7 +42,7 @@
 	#logo{
 		display : block;
 		text-align : center;
-		margin-top : 30px;
+		margin-top : 20px;
 		margin-bottom : 20px;
 	}
 </style>
@@ -123,7 +127,7 @@
 				var isExist = data.isExist;
 				rdNum = data.rdNum;
 				if(isExist){
-					alert("인증메일이 "+email+"로 발송되었습니다. 입력란에 정확히 입력해 주세요. rdNum : "+rdNum);
+					alert("인증메일이 "+email+"로 발송되었습니다. 입력란에 정확히 입력해 주세요.");
 					$('#fake').empty();
 					$('#fake').append("<input type='text' id='ctPwd' class='form-control' placeholder='인증번호를 입력해주세요.'/><button class='btn btn-outline-info' id='confirmPwd'>인증</button>");
 					
@@ -133,11 +137,10 @@
 					});
 					
 					$('#confirmPwd').off().on('click',function(){
-						alert("클릭테스트!");
 						if(rdNum == ctPwd){
 							alert("인증이 완료되었습니다. 새로운 비밀번호를 입력해주세요!");
 							var url = "${pageContext.request.contextPath }/users/findPwdForm.do?email="+email;
-							var pop = window.open(url, "", "width=500, height=400, left=500, top=200");
+							var pop = window.open(url, "", "width=500, height=500, left=500, top=200");
 						} 		
 					});
 				}else{

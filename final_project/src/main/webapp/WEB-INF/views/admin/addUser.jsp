@@ -37,9 +37,9 @@
 <body>
 	<div class="container">
 		<div class="card">
-			<h1>회원 정지 폼 입니다.</h1>
+			<h1>회원 정지 해제 폼 입니다.</h1>
 			<div class="alert alert-warning" role="alert">
-			  회원을 정지시키기 전 관리자 비밀번호를 입력해주세요.
+			  회원 정지를 해제 시키기 전 관리자 비밀번호를 입력해주세요.
 			</div>
 			<div class="input-group mb-3">
 			  <input type="password" id="inputPwd" class="form-control" placeholder="관리자 비밀번호 입력.." aria-label="Recipient's username" aria-describedby="basic-addon2">
@@ -61,21 +61,22 @@
 				console.log("isvalid : "+data.isvalid);
 				var isvalid = data.isvalid;
 				if(isvalid){
-					var isConfirm = confirm("확인되었습니다");
+					var isConfirm = confirm("확인되었습니다.");
 					
 					if(isConfirm){
 						var userId = "${userId}";
 						console.log("userId : "+userId);
 						
 						$.ajax({
-							url : '${pageContext.request.contextPath }/admin/deleteUsers.do',
+							url : '${pageContext.request.contextPath }/admin/addUsers.do',
 							method : 'get',
 							data : {id : userId},
 							success : function(data){
+								console.log("setDisabled : "+data.setDisabled);
 								var setDisabled = data.setDisabled;
 								
-								if(setDisabled == 'yes'){
-									alert("회원이 정지되었습니다.");
+								if(setDisabled == 'no'){
+									alert("회원 정지 해제 되었습니다.");
 									window.opener.location.href = "${pageContext.request.contextPath }/admin/userAdmin.do";
 									window.close();
 								}else{

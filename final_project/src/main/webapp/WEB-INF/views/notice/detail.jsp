@@ -18,8 +18,10 @@
 <%@ include file="/include/header.jsp" %>
 <div class="container">
 	<h1 class="text-center"><a href="${pageContext.request.contextPath }/notice/list.do" style="color : black;">공지사항</a> </h1>
-	<a href="delete.do?nNo=${dto.nNo}" id="isDelete" class="float-right btn btn-outline-danger" style="margin-left : 10px;">삭제</a>
-	<a href="updateform.do?nNo=${dto.nNo }" class="btn btn-outline-warning float-right">수정하기</a>
+	<c:if test="${not empty isAdmin }">
+		<a href="delete.do?nNo=${dto.nNo}" id="isDelete" class="float-right btn btn-outline-danger" style="margin-left : 10px;">삭제</a>
+		<a href="updateform.do?nNo=${dto.nNo }" class="btn btn-outline-warning float-right">수정하기</a>
+	</c:if>
 		<nav>
 		  <div class="nav nav-tabs" id="nav-tab" role="tablist">
 		    <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">공지사항</a>

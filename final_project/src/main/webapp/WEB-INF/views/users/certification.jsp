@@ -190,6 +190,7 @@ input {
 	session.setAttribute("login", login);
 %>
 <body>
+	<%@ include file="/include/header.jsp" %>
    <div class="container">
    	 <a href="${pageContext.request.contextPath }/" id="logo">
 		<img class="img-fluid" src="${pageContext.request.contextPath }/resources/images/logo_umarket.png" alt="Acorn ShoppingMall Logo" />
@@ -1144,6 +1145,7 @@ OR
             </div>
          </div>
       </form>
+      <%@ include file="/include/footer.jsp" %>
    </div>
 
    <!-- 버튼 전체선택 & 해제 기능 start -->

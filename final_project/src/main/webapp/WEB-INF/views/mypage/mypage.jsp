@@ -1,14 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <title>mypage</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 </head>
 <body>
+	<%@ include file="/include/header.jsp" %>
 	<div class="container">
 		<div class="text-center">
 			<h1>header 부분</h1>
@@ -55,7 +56,7 @@
 				</div>
 			</div>
 		</div>
-		<h1 class="text-center">footer 부분</h1>
+		<%@ include file="/include/footer.jsp" %>
 	</div>
 </body>
 </html>

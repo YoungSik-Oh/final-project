@@ -17,13 +17,13 @@ CREATE TABLE PUSERS (
  -- Notice Table 
 CREATE TABLE NOTICE(
 
-nNo NUMBER PRIMARY KEY   --  공지사항 번호 
-nTitle  VARCHAR2(100) --  공지사항 제목  
-nContent CLOB --  공지사항 내용
+nNo NUMBER PRIMARY KEY,   --  공지사항 번호 
+nTitle  VARCHAR2(100), --  공지사항 제목  
+nContent CLOB, --  공지사항 내용
 REGDATE DATE -- 공지사항 등록일자
 );
 
-CREATE SEQUENCE notice_seq - 공지사항 시퀀스
+CREATE SEQUENCE notice_seq; - 공지사항 시퀀스
 
 -- Product Table 
 CREATE TABLE product(
