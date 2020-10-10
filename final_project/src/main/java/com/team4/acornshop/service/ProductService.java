@@ -11,5 +11,5 @@ public interface ProductService {
 	public void uploadProduct(ProductDto dto, ModelAndView v,HttpServletRequest request);
 	public void getList(HttpServletRequest request);
 	public void getDetail(HttpServletRequest request);
-	
+	public void deleteContent(int pNo, HttpServletRequest request);
 }

@@ -19,21 +19,37 @@ public class ProductDaoImpl implements ProductDao{
 	public void insert(ProductDto dto) {
 		session.insert("product.insert",dto);
 	}
-
+	
+	@Override
+	public List<ProductDto> userAdminGetList(ProductDto dto) {
+		
+		return session.selectList("product.userAdminGetList", dto);
+	}
+	
 	@Override
 	public List<ProductDto> getList(ProductDto dto) {
 		// TODO Auto-generated method stub
 		return session.selectList("product.getList", dto);
 	}
-	
+
 	@Override
 	public int getCount() {
 		return session.selectOne("product.getCount");
 	}
 
 	@Override
+	public int getCount(ProductDto dto) {
+		return session.selectOne("product.admingetCount", dto);
+	}
+	
+	@Override
 	public ProductDto getData(int pNo) {
 		return session.selectOne("product.getData", pNo);
 	}
-	
+
+	@Override
+	public void delete(int pNo) {
+			session.delete("product.delete", pNo);
+		
+	}
 }

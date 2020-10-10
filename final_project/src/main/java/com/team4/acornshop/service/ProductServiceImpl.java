@@ -56,8 +56,7 @@ public class ProductServiceImpl implements ProductService {
 		}
 		//세션에서 읽어낸 파일 업로더의 아이디 
 		String id=(String)request.getSession().getAttribute("id");
-		
-		//dto 에 업로드된 상품정보를 담는다.
+
 		dto.setId(id);
 		dto.setOrgFileName(orgFileName);
 		dto.setSaveFileName(saveFileName);
@@ -91,11 +90,12 @@ public class ProductServiceImpl implements ProductService {
 		ProductDto dto=new ProductDto();
 		dto.setStartRowNum(startRowNum);
 		dto.setEndRowNum(endRowNum);
+		dto.setId(id);
 		List<ProductDto> productList=productDao.getList(dto);
 		
 		//상품 목록 얻어오기
 		//전체 row 의 갯수 
-		int totalRow=productDao.getCount();
+		int totalRow=productDao.getCount(dto);
 		
 		//전체 페이지의 갯수 구하기
 		int totalPageCount=
@@ -123,8 +123,15 @@ public class ProductServiceImpl implements ProductService {
 	public void getDetail(HttpServletRequest request) {
 		int pNo=Integer.parseInt(request.getParameter("pNo"));
 		ProductDto productdetail=productDao.getData(pNo);
+
 		request.setAttribute("productdetail", productdetail);
+		
 	}
+
+	@Override
+	public void deleteContent(int pNo, HttpServletRequest request) {
+		productDao.delete(pNo);
+	}
+
+	
 }
-
-

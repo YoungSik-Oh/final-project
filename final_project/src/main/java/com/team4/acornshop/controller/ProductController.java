@@ -43,5 +43,12 @@ public class ProductController {
 		m.setViewName("product/productdetail");
 		return m;
 	}
+	@RequestMapping("/product/delete")
+	public ModelAndView delete(int pNo, HttpServletRequest request,
+			ModelAndView mView) {
+		productService.deleteContent(pNo, request);
+		mView.setViewName("product/delete");
+		return mView;
+	}
 	
 }
