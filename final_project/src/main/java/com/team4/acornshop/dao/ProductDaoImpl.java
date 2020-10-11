@@ -1,5 +1,6 @@
 package com.team4.acornshop.dao;
 
+
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -26,12 +27,13 @@ public class ProductDaoImpl implements ProductDao{
 		
 		return session.selectList("product.userAdminGetList", dto);
 	}
-	
+
+	@Override
 	public List<ProductDto> getList(ProductDto dto) {
 		// TODO Auto-generated method stub
-		return session.selectList("product.getList", dto);
+		return session.selectList("product.getList",dto);
 	}
-	
+
    @Override
    public int getCount(ProductDto dto) {
       return session.selectOne("product.admingetCount", dto);
@@ -46,7 +48,7 @@ public class ProductDaoImpl implements ProductDao{
 	public ProductDto getData(int pNo) {
 		return session.selectOne("product.getData", pNo);
 	}
-
+	
 	@Override
 	public List<ProductDto> getList2(ProductDto dto) {
 		// TODO Auto-generated method stub

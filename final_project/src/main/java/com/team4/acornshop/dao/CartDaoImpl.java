@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.team4.acornshop.dto.CartDto;
+import com.team4.acornshop.dto.UsersDto;
 @Repository
 public class CartDaoImpl implements CartDao{
 	@Autowired
@@ -37,9 +38,21 @@ public class CartDaoImpl implements CartDao{
 	}
 
 	@Override
-	public void deleteproduct(int pNo) {
+	public void deleteproduct(CartDto dto) {
 		// TODO Auto-generated method stub
-		session.selectOne("users.delete", pNo);
+		session.selectOne("cart.deleteproduct", dto);
+	}
+
+	@Override
+	public void destinationUpdate(UsersDto dto) {
+		// TODO Auto-generated method stub
+		session.update("cart.destinationUpdate", dto);
+	}
+
+	@Override
+	public List<CartDto> getSellList(String id) {
+		// TODO Auto-generated method stub
+		return session.selectList("cart.getSellList",id);
 	}
 
 }

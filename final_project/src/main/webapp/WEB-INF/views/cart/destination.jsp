@@ -20,7 +20,7 @@
 </style>
 </head>
 <body>
-<h4>배송지 선택 아직 미완성</h4>
+<h4>배송지 수정</h4>
 <hr />
 	<div class="txtBox">
 		<div id="privacy">
@@ -45,7 +45,7 @@
 				</tr>
 			</table>
 		</div>
-		<button>수정</button>
+		<a href="${pageContext.request.contextPath }/cart/destination_insertform.do">수정</a>
 		<button>선택</button>
 	</div>
 	<a href="ruf.jsp">배송지 추가</a>

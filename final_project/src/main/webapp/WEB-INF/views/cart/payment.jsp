@@ -38,6 +38,7 @@
 	}
 </style>
 <body ng-app="myApp">
+<%@ include file="/include/header.jsp" %>
 <div class="container" ng-controller="one">
 	<div>
 		<h1>주문/결제</h1>
@@ -72,23 +73,27 @@
 		<table class="table table-striped table-sm">
 		<thead>
 			<tr>
-				<th>상품정보</th>
-				<th>상품수량</th>
+				<th style="width:150px;">상품이미지</th>
+				<th>상품이름</th>
 				<th>상품금액</th>
 			</tr>
 		</thead>
+		<c:set var = "total" value = "0" />
 		<c:forEach var="tmp" items="${clist2}">
 		<tbody>
 			<tr>
 				<td>
-					<div>${tmp.pTitle }</div>
+					<img style="width:150px; height:100px;" src="${pageContext.request.contextPath }/upload/${tmp.saveFileName}">
 				</td>
-				<td>몇개</td>
+				<td>${tmp.pTitle }</td>
 				<td>${tmp.pPrice }</td>
 			</tr>
+			<c:set var= "total" value="${total + tmp.pPrice}"/>
 		</c:forEach>
 			<tr>
-				<td>주문금액(총합)</td>
+				<td>
+					<div><p id="qwer">총 주문금액 : <c:out value="${total}"/></p></div>
+				</td>
 			</tr>
 		</tbody>
 	</table>
@@ -101,18 +106,6 @@
 				<tr>
 					<th class="self">총상품가격(총합)</th>
 					<td>가격</td>
-				</tr>
-				<tr>
-					<th class="self">할인 쿠폰 및 포인트</th>
-					<td>0원</td>
-				</tr>
-				<tr>
-					<th class="self">회원 등급 할인</th>
-					<td>0원</td>
-				</tr>
-				<tr>
-					<th class="self">할인 적용 후의 금액</th>
-					<td>0원</td>
 				</tr>
 				<tr>
 					<th class="self">결제수단</th>
@@ -146,5 +139,6 @@
 	</div>
 	
 </div>
+<%@ include file="/include/footer.jsp" %>
 </body>
 </html>

@@ -3,26 +3,31 @@ package com.team4.acornshop;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.team4.acornshop.dto.ProductDto;
+import com.team4.acornshop.dto.CartDto;
+import com.team4.acornshop.service.CartService;
 import com.team4.acornshop.service.NoticeService;
+import com.team4.acornshop.service.ProductService;
 
 
 @Controller
 public class HomeController {
 	@Autowired
 	private NoticeService noticeService;
+	@Autowired
+	private ProductService productService;
+	@Autowired
+	private CartService cartService;
 	
+
 	@RequestMapping("/main")
-	public String home(HttpServletRequest request, ProductDto dto) {
+	public String home(HttpServletRequest request) {
 		noticeService.getList(request);
 		return "main";
-	}
-	
+	}	
 	@RequestMapping("/naverLogin")
 	public String naverLogin() {
 		return "naverLogin";
@@ -40,9 +45,13 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/mypage/orderlist.do")
-	public String OrderList() {
-		
-		return "mypage/orderlist";
+	public ModelAndView OrderList(ModelAndView mView, HttpServletRequest request, CartDto dto) {
+		String id = (String)request.getSession().getAttribute("id");
+		dto.setId(id);
+		cartService.getList2(request, dto);
+		cartService.getSellList(request, dto);
+		mView.setViewName("mypage/orderlist");
+		return mView;
 	}
 	
 	@RequestMapping("/mypage/product.do")

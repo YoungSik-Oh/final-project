@@ -8,7 +8,13 @@
 <title>order list page</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap-grid.css" />
 </head>
+<style>
+  .ww {
+    width: 150px;
+  }
+</style>
 <body>
 <!--  PRODUCT 테이블에서 -->
 
@@ -26,30 +32,60 @@
 
 		<div class="card">
 			<div class="card-header">
-				<ul class="nav nav-tabs card-header-tabs">
-					<li class="nav-item"><a class="nav-link active" href="#">구매목록</a>
+				<ul class="nav nav-tabs" id="myTab" role="tablist">
+					<li class="nav-item" role="presentation">
+						구매목록
 					</li>
-					<li class="nav-item"><a class="nav-link" href="#">판매 목록</a></li>
 				</ul>
 			</div>
-			<div>
-				<span class="float:left">주문일 : regdate </span>
-					<a href="orderdetail.do" style="float: right">주문 상세보기</a>
-			</div>
-			<hr />
-
-			c:forEach / 반복문써서 상품 가져오기
-
-			<div class="media position-relative">
-				<img src="..." class="mr-3" alt="...">상품 이미지
-				<div class="media-body">
-					<h5 class="mt-0">상품명</h5>
-					<p>금액 / 갯수</p>
-				</div>
-			</div>
+			<table class="table">
+			<thead>
+				<tr>
+					<th class="ww">상품이미지</th>
+					<th>상품이름</th>
+					<th>상품가격</th>
+				</tr>
+			</thead>
+			<c:forEach var="tmp" items="${clist2}">
+			<tbody>
+				<tr>
+					<td><img style="width:150px; height:100px;" src="${pageContext.request.contextPath }/upload/${tmp.saveFileName}"></td>
+					<td><h5 class="mt-0">${tmp.pTitle }</h5></td>
+					<td><p>${tmp.pPrice }</p></td>
+				</tr>
+			</tbody>
+			</c:forEach>
+			</table>
 		</div>
-		<h1 class="text-center">footer 부분</h1>
-
+		<br />
+		<div class="card">
+			<div class="card-header">
+				<ul class="nav nav-tabs" id="myTab" role="tablist">
+					<li class="nav-item" role="presentation">
+						판매목록
+					</li>
+				</ul>
+			</div>
+			<table class="table">
+			<thead>
+				<tr>
+					<th class="ww">상품이미지</th>
+					<th>상품이름</th>
+					<th>상품가격</th>
+				</tr>
+			</thead>
+			<c:forEach var="tmp2" items="${slist}">
+			<tbody>
+				<tr>
+					<td><img style="width:150px; height:100px;" src="${pageContext.request.contextPath }/upload/${tmp2.saveFileName}" class="mr-3"></td>
+					<td><h5 class="mt-0">${tmp2.pTitle }</h5></td>
+					<td><p>${tmp2.pPrice }</p></td>
+				</tr>
+			</tbody>
+			</c:forEach>
+			</table>
+		</div>
 	</div>
+	<%@ include file="/include/footer.jsp" %>
 </body>
 </html>

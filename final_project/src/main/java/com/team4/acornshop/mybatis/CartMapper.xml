@@ -25,8 +25,20 @@
 		WHERE pNo=#{pNo}
 	</select>
 	
-	<delete id="deleteproduct" parameterType="int">
+	<delete id="deleteproduct" parameterType="cartDto">
 		DELETE FROM cart
-		WHERE pNo=#{pNo} AND id=#{id}
+		WHERE pNo=#{pNo} AND id = #{id}
 	</delete>
+	
+	<update id="destinationUpdate" parameterType="com.team4.acornshop.dto.UsersDto">
+		UPDATE pusers
+		SET phone = #{phone}, addr = #{addr}
+		WHERE id = #{id}
+	</update>
+	
+	<select id="getSellList" resultType="cartDto">
+		SELECT p.* , c.*
+			FROM product p, cart c 
+		WHERE p.id=#{id} AND c.id=#{id} AND c.pCheck=1
+	</select>
 </mapper>

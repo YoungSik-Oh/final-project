@@ -13,3 +13,4 @@ public interface ProductService {
 	public void getDetail(HttpServletRequest request);
 	public void getList2(HttpServletRequest request);
 }
+

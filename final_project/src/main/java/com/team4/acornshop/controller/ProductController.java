@@ -43,6 +43,5 @@ public class ProductController {
 		m.setViewName("product/productdetail");
 		return m;
 	}
-	
-	
 }
+

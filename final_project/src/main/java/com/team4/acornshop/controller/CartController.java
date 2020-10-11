@@ -13,12 +13,15 @@ import org.springframework.web.servlet.ModelAndView;
 import com.team4.acornshop.dto.CartDto;
 import com.team4.acornshop.dto.UsersDto;
 import com.team4.acornshop.service.CartService;
+import com.team4.acornshop.service.UsersService;
 
 @Controller
 public class CartController {
 	@Autowired
 	private CartService cartService;
-
+	@Autowired
+	private UsersService userService;
+	
 	@RequestMapping("/cart/cart")
 	public ModelAndView getlist(ModelAndView mView, HttpServletRequest request, CartDto dto) {
 		cartService.getList(request, dto);
@@ -42,23 +45,41 @@ public class CartController {
 	@RequestMapping("/cart/payment")
 	public ModelAndView getlist2(ModelAndView mView, HttpServletRequest request, CartDto dto) {
 		String id = (String)request.getSession().getAttribute("id");
+		userService.myPage(id, mView);
 		cartService.getList2(request, dto);
 		mView.setViewName("cart/payment");
 		return mView;
 	}
 	
 	@RequestMapping("/cart/delete")
-	public ModelAndView delete(HttpServletRequest request,@RequestParam int pNo, ModelAndView mView) {
-		cartService.deleteproduct(pNo, request);
-		System.out.println(pNo);
-		mView.setViewName("redirect:/cart.do");
+	public ModelAndView delete(CartDto dto,HttpServletRequest request, ModelAndView mView) {
+		String id = (String)request.getSession().getAttribute("id");
+		dto.setId(id);
+		cartService.deleteproduct(dto);
+		mView.setViewName("redirect:/cart/cart.do");
 		return mView;
 	}
 	@RequestMapping("/cart/destination")
 	public ModelAndView destination(ModelAndView mView, HttpSession session) {
 		String id = (String)session.getAttribute("id");
+		userService.myPage(id, mView);
 		mView.setViewName("cart/destination");
 		return mView;
 	}
 	
+	@RequestMapping("/cart/destination_insertform")
+	public ModelAndView destination_insertform(ModelAndView mView, HttpSession session) {
+		String id = (String)session.getAttribute("id");
+		userService.myPage(id, mView);
+		mView.setViewName("cart/destination_insertform");
+		return mView;
+	}
+	
+	@RequestMapping("/cart/destination_insert")
+	public String destination_insert(UsersDto dto, HttpSession session) {
+		String id = (String)session.getAttribute("id");
+		dto.setId(id);
+		cartService.destinationUpdate(dto);
+		return "/cart/destination_insert";
+	}
 }

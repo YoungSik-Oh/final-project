@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.team4.acornshop.dao.CartDao;
 import com.team4.acornshop.dto.CartDto;
+import com.team4.acornshop.dto.UsersDto;
 
 @Service
 public class CartServiceImpl implements CartService{
@@ -48,9 +49,23 @@ public class CartServiceImpl implements CartService{
 	}
 
 	@Override
-	public void deleteproduct(int pNo, HttpServletRequest request) {
+	public void deleteproduct(CartDto dto) {
 		// TODO Auto-generated method stub
-		cartDao.deleteproduct(pNo);
+		cartDao.deleteproduct(dto);
+	}
+
+	@Override
+	public void destinationUpdate(UsersDto dto) {
+		// TODO Auto-generated method stub
+		cartDao.destinationUpdate(dto);
+	}
+
+	@Override
+	public void getSellList(HttpServletRequest request, CartDto dto) {
+		// TODO Auto-generated method stub
+		String id=(String)request.getSession().getAttribute("id");
+		List<CartDto> slist=cartDao.getSellList(id);
+		request.setAttribute("slist", slist);
 	}
 	
 }

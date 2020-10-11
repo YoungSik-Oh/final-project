@@ -1,8 +1,10 @@
 package com.team4.acornshop.service;
 
 import java.io.File;
+
 import java.net.URLEncoder;
 import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -124,9 +126,8 @@ public class ProductServiceImpl implements ProductService {
 		int pNo=Integer.parseInt(request.getParameter("pNo"));
 		ProductDto productdetail=productDao.getData(pNo);
 		request.setAttribute("productdetail", productdetail);
-		
 	}
-
+	
 	@Override
 	public void getList2(HttpServletRequest request) {
 		// TODO Auto-generated method stub	
@@ -134,6 +135,4 @@ public class ProductServiceImpl implements ProductService {
 		 List<ProductDto> plist=productDao.getList2(dto);
 		 request.setAttribute("plist", plist);
 	}
-
-	
 }

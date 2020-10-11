@@ -37,7 +37,9 @@
 	}
 </style>
 </head>
+
 <body ng-app="myApp">
+<%@ include file="/include/header.jsp" %>
 <div class="container" ng-controller="one">
 	<div>
 		<h1>장바구니</h1>
@@ -50,7 +52,7 @@
 					<input type="checkbox" class="chk" id="c1" name="chksum" value="0" checked/>
 					전체 선택
 				</th>
-				<th>상품정보</th>
+				<th style="width:600px;">상품정보</th>
 				<th>삭제</th>
 				<th>상품금액</th>
 			</tr>
@@ -60,20 +62,19 @@
 		<c:forEach var="clists" items="${clist}">
 			<tr>
 				<td class="self">
-					<input type="checkbox" class="chk" id="${clists.pNo }" name="chksum" value="${clists.pPrice }" checked/>
-					상품이미지
+					<input type="checkbox" class="chk" name="chksum" value="${clists.pPrice }" checked/>
+					<img style="width:150px; height:100px;" src="${pageContext.request.contextPath }/upload/${clists.saveFileName}">
 				</td>
 				<td>
 					<div>${clists.pTitle }</div>
 					<div class="float-left"></div>
 					<hr class="made" />
 					<div>
-						상품수량
-						<input type="text" ng-model="stock" oninput="this.value = this.value.replace(/[^0-9]/g, '');"/>
+						
 					</div>
 				</td>
 				<td>
-					<a href="javascript:deleteConfirm();">삭제</a>
+					<a href="javascript:deleteConfirm(${clists.pNo });">삭제</a>
 				</td>
 				<td>
 					${clists.pPrice }<span>원</span>
@@ -88,11 +89,6 @@
 			</tr>	
 		</tbody>
 	</table>
-	<div>
-	<p></p>
-		<a href="javascript:ddd();">input요소의 아이디의 값 가져오기 하고싶어서</a>
-		<a href="#">모두삭제</a>
-	</div>
 	<div class="txtBox">
 		<ul>
 			<li>구매 가능 수량이 1개로 제한된 상품은 주문 취소 시, 24시간 내 가상계좌 재주문이 불가합니다.</li>
@@ -109,6 +105,8 @@
 	</div>
 	</form>
 </div>
+<%@ include file="/include/footer.jsp" %>
+
 <script>
 
 //checkbox체크한 것들의 가격 불러오기
@@ -142,7 +140,7 @@ $('.chk').click(function(){
 	}
 });
 //상품 삭제
-function deleteConfirm(){
+function deleteConfirm(pNo){
 	//나중에는 선택삭제를 할 수 있을까싶어서 남겨둠
 	//var ischeck=0;
 	//	$('.chk').each(function(){ 
@@ -151,8 +149,9 @@ function deleteConfirm(){
     //    }
     //그냥 삭제 =
 	var isDelete=confirm("이 상품을 삭제 하시겠습니까?");
+    
 	if(isDelete){
-		location.href="delete.do?pNo=${clists.pNo}";
+		location.href="delete.do?pNo="+pNo;
 	}
 }
 //input요소 아이디의 값 가져오기 미완성
