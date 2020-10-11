@@ -88,11 +88,19 @@ public class HomeController {
 
 		return "operation/privacy";
 	}
-	
+
 	// 할인쿠폰 페이지로 이동
 	@RequestMapping("/coupon/coupon")
 	public String coupon() {
-		
+
 		return "coupon/coupon";
 	}
+
+	// 할인쿠폰 생성 페이지로 이동
+	@RequestMapping("/coupon/couponinsertform")
+	public String couponinsertform() {
+
+		return "coupon/couponinsertform";
+	}
+
 }
