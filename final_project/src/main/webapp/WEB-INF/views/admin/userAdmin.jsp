@@ -139,7 +139,7 @@
 		alert(id);
 		if(isOpenProduct){
 			var url = "${pageContext.request.contextPath }/admin/openUserProduct.do?id="+id;
-			var pop = window.open(url, "", "width=600, height=600, left=500, top=200");
+			var pop = window.open(url, "", "width=700, height=600, left=500, top=200");
 		}
 	}
 </script>
