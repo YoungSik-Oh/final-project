@@ -54,6 +54,16 @@
 					</div>
 				</div>
 			</div>
+			<div class="col mb-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">
+							<a href="${pageContext.request.contextPath }/coupon/coupon.do">할인쿠폰</a>
+						</h5>
+						<p class="card-text">할인쿠폰 등록 및 사용 내역을 조회할 수 있습니다.</p>
+					</div>
+				</div>
+			</div>
 		</div>
 		<%@ include file="/include/footer.jsp" %>
 	</div>
