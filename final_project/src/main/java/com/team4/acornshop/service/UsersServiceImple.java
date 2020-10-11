@@ -1,8 +1,10 @@
 package com.team4.acornshop.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.team4.acornshop.NaverMail;
 import com.team4.acornshop.dao.UsersDao;
+import com.team4.acornshop.dto.ProductDto;
 import com.team4.acornshop.dto.UsersDto;
 
 @Service
@@ -238,5 +241,14 @@ public class UsersServiceImple implements UsersService{
 			map.put("rdNum", rdNum);
 		}
 		return map;
-	}	
+	}
+	
+	@Override
+	public void getIdList(ModelAndView m, HttpServletRequest request){
+		
+		UsersDto dto=new UsersDto();
+		List<UsersDto> list = usersDao.getIdList(dto);
+		m.addObject("getIdList", list);
+		
+	}
 }

@@ -89,4 +89,9 @@
 		set disabled = #{disabled}
 		WHERE id = #{id}
 	</update>
+	
+	<select id="getIdList" parameterType="com.team4.acornshop.dto.UsersDto" resultType="com.team4.acornshop.dto.UsersDto">
+		SELECT id FROM pusers
+		WHERE id IS NOT NULL
+	</select>
 </mapper>

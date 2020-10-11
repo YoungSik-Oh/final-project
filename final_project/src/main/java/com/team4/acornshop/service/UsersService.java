@@ -2,6 +2,7 @@ package com.team4.acornshop.service;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.ModelAndView;
@@ -22,4 +23,5 @@ public interface UsersService {
 	public Map<String, Object> findPwd(String rdNum, UsersDto dto);
 	public void updateFindNewPwd(UsersDto dto);
 	public Map<String, Object> sendRdNum(String rdNum, String email);
+	public void getIdList(ModelAndView m, HttpServletRequest request);
 }

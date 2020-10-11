@@ -1,6 +1,7 @@
 package com.team4.acornshop.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -245,4 +246,13 @@ public class UsersController {
 		return map;
 		
 	}
+
+	@RequestMapping("/coupon/couponinsertform")
+	public ModelAndView getIdList(ModelAndView m,HttpServletRequest request) {
+		usersService.getIdList(m, request);
+		m.setViewName("coupon/couponinsertform");
+		return m;
+
+	}
+	
 }

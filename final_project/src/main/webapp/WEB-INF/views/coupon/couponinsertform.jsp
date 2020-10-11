@@ -30,6 +30,14 @@
 				<input type="hidden" class="form-control" name="cIsUsed" id="cIsUsed" value="0"/>
 			</div>
 			<div class="form-group">
+				 <label for="id">발급대상</label>
+				 <select name="id" id="id">
+				 	<c:forEach var="tmp" items="'${ulist }">
+				 		<option value="${tmp.id }">${tmp.id }</option>
+				 	</c:forEach>
+				 </select>
+			</div>
+			<div class="form-group">
 				<p class="h5 text-danger">※ 등록된 쿠폰의 기본 유효기간은 발급일로부터 180일 까지 입니다.</p>
 			</div>
 			<button type="submit" class="btn btn-primary">발급</button>

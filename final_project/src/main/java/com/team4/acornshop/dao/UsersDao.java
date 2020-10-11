@@ -1,5 +1,7 @@
 package com.team4.acornshop.dao;
 
+import java.util.List;
+
 import com.team4.acornshop.dto.UsersDto;
 
 public interface UsersDao {
@@ -16,4 +18,5 @@ public interface UsersDao {
 	public boolean emailConfirm(String email);
 	//admin controller에서 사용
 	public void containUsers(UsersDto dto);
+	public List<UsersDto> getList(UsersDto dto);
 }

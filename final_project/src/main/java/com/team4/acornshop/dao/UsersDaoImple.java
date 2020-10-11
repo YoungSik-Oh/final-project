@@ -1,5 +1,7 @@
 package com.team4.acornshop.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -98,5 +100,12 @@ public class UsersDaoImple implements UsersDao{
 	@Override
 	public void containUsers(UsersDto dto) {
 		session.update("users.containUser", dto);
+	}
+
+	@Override
+	public List<UsersDto> getIdList2(UsersDto dto) {
+		
+		return session.selectList("users.getIdList", dto);
+		
 	}
 }
