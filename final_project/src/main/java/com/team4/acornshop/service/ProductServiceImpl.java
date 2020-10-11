@@ -142,7 +142,6 @@ public class ProductServiceImpl implements ProductService {
 		// 인코딩된 키워드를 미리 만들어 둔다.
 		String encodedK = URLEncoder.encode(keyword);
 
-		// 검색 키워드와 startRowNum, endRowNum 을 담을 FileDto 객체 생성
 		ProductDto dto = new ProductDto();
 
 		if (!keyword.equals("")) { // 만일 키워드가 넘어온다면

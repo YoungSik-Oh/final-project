@@ -95,10 +95,9 @@ div {
 	<%@ include file="/include/header.jsp" %>
 	<!-- Top Contents End -->
 
-	 <div class="container" style="min-width: 1236px; width: 1024px;">
+	 <div class="container">
 		<div class="bIBRdK">
-			<div class="lTHfT">검색결과                                                                                                                 
-			</div>
+			<div class="lTHfT">검색결과</div>
 		</div>
 		<c:forEach var="tmp" items="${plist }">
 			<div style="float: left; width: 25%; text-align: center;">
@@ -107,9 +106,7 @@ div {
 						<div class="kPQrGe">
 							<img class="fACOIQ"
 								src="${pageContext.request.contextPath }/upload/${tmp.saveFileName }">
-							${tmp.saveFileName }
 							<div class="jKZagR">${tmp.pTitle }</div>
-							<!-- <p class="card-text">${tmp.pContents }</p> -->
 							<div class="kZVnBR">${tmp.pPrice }</div>
 							<div class="btn btn-primary">구매하기</div>
 						</div>

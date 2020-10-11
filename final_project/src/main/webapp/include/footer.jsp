@@ -1,20 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!-- Footer Contents -->
+
 <br/>
 <div class="container text-center">
 
-<table class="table table-borderless ">
+<table class="table table-borderless " style=" border-top: 2px solid rgb(30, 29, 41);">
   <thead>
     <tr>
       <th scope="col"><a href="${pageContext.request.contextPath }/notice/list.do">공지사항</a></th>
-      <th scope="col"><a href="${pageContext.request.contextPath }/operation/operation_policy.do"></a>운영정책</th>
+      <th scope="col"><a href="${pageContext.request.contextPath }/operation/operation_policy.do">운영정책</a></th>
       <th scope="col"><a target="_blank" href="${pageContext.request.contextPath }/operation/access_terms.do">이용약관</a></th>
       <th scope="col"><a target="_blank" href="${pageContext.request.contextPath }/operation/privacy.do">개인정보처리방침</a></th>
     </tr>
   </thead>
   <tbody>
-  	
   	<tr>
       <td>
       	<a href="${pageContext.request.contextPath }/"> <img
@@ -57,5 +58,4 @@ $('#logout').on('click',function(){
 		return false;
 	}
 });
-</script>
 </script>

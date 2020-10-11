@@ -59,39 +59,7 @@
 </style>
 <body>
 <!-- Top Contents -->
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<a href="${pageContext.request.contextPath }/"> <img
-						class="img-fluid"
-						src="${pageContext.request.contextPath }/resources/images/logo_umarket.png"
-						alt="Acorn ShoppingMall Logo" />
-					</a>
-				</div>
-				<div class="col">
-					<form class="form-inline my-2 my-lg-0">
-						<input class="form-control mr-sm-2" type="search"
-							placeholder="찾고싶은 상품을 검색하세요" aria-label="Search">
-						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">검색</button>
-					</form>
-				</div>
-				<div class="col">
-					<c:choose>
-						<c:when test="${empty id }">
-							<a href="${pageContext.request.contextPath }/users/loginForm.do" class="btn btn-outline-primary">로그인/회원가입</a>		
-						</c:when>
-						<c:otherwise>
-							<strong>${id }</strong>님
-							<a href="mypage/mypage.do" class="text-dark">마이페이지</a>
-							<c:if test="${not empty isAdmin }">
-								<a href="${pageContext.request.contextPath }/admin/main.do">관리자</a>
-							</c:if>
-							<a href="javascript:" class="text-danger" id="logout">로그아웃</a>
-						</c:otherwise>
-					</c:choose>	
-				</div>
-			</div>
-		</div>
+		<%@ include file="/include/header.jsp" %>
 		<!-- Top Contents End -->
 	<div class="gzvyOi">
 		<div class="gBbWcX">
@@ -150,21 +118,7 @@
 		</div>
 	</div>
 		<!-- Footer Contents -->
-	<div class="container text-center">
-		<div class="row">
-			<div class="col mt-3">
-				<a href="#">공지사항</a> <b> | </b> <a
-					href="${pageContext.request.contextPath }/operation/operation_policy.do">운영정책</a>
-				<b> | </b> <a target="_blank" href="${pageContext.request.contextPath }/operation/access_terms.do">이용약관</a> <b> | </b> <a target="_blank" href="${pageContext.request.contextPath }/operation/">개인정보처리방침</a>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col mt-3">
-				<p>COPYRIGHT © 2020 ACORN SHOPPINGMALL KOREA. All Rights
-					Reserved.</p>
-			</div>
-		</div>
-	</div>
+	<%@ include file="/include/footer.jsp" %>
 	<!-- Footer Contents End -->
 </body>
 </html>

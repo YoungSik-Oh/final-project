@@ -25,8 +25,8 @@
             </div>
             <div class="col">
 					<form action="${pageContext.request.contextPath }/product/searchProduct.do" class="form-inline my-2 my-lg-0">
- 					<label for="condition">검색조건</label> 
-					<select name="condition" id="condition"> 
+ 					<label for="condition"></label> 
+					<select name="condition" id="condition" style="display:none"> 
  						<option value="a" <c:if test="${condition eq 'a' }">selected</c:if>>남성의류</option>
  						<option value="b" <c:if test="${condition eq 'b' }">selected</c:if>>여성의류</option>
  						<option value="c" <c:if test="${condition eq 'c' }">selected</c:if>>헬스/건강식품</option>
