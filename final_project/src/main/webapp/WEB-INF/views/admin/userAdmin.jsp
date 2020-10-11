@@ -136,10 +136,10 @@
 	//회원이 올린 게시글 보기
 	function openUserProduct(id){
 		var isOpenProduct = confirm(id+"님의 상품 목록을 확인하시겠습니까?");
-		alert(id);
+	
 		if(isOpenProduct){
 			var url = "${pageContext.request.contextPath }/admin/openUserProduct.do?id="+id;
-			var pop = window.open(url, "", "width=700, height=600, left=500, top=200");
+			var pop = window.open(url, "", "width=700, height=500, left=500, top=200");
 		}
 	}
 </script>

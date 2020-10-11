@@ -51,7 +51,7 @@
 <script src="${pageContext.request.contextPath }/resources/js/jquery.form.min.js"></script>
 	<script>
 	$('#isDelete').on('click', function(){
-		var isDelete=confirm("삭제?");
+		var isDelete=confirm("해당 게시글을 삭제하시겠습니까?");
 		if(!isDelete){
 			return false;
 		}

@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebFilter({"/users/private/*","/admin/*"})
+@WebFilter({"/users/private/*","/admin/*", "/mypage/*","/product/productUpdateform","/product/productInsertform"})
 public class LoginFilter implements Filter{
 
 	@Override

@@ -74,10 +74,9 @@
 					alert(isExist);
 					//data.isExist 가 true이면 회원가입을 한 적이 있고 false이면 회원가입을 한 적이 없다.
 					if(isExist){
-						alert("회원가입을 한 적이 있습니다.");
 						window.opener.top.location.href = "${pageContext.request.contextPath}/main.do?id="+naveremail;
 					}else{
-						alert("회원가입을 한 적이 없습니다.  프로젝트");
+						alert("네이버 로그인 시 최초 한번 가입해야 합니다.");
 						window.opener.top.location.href = "${pageContext.request.contextPath}/users/certification.do?login=naverLogin";
 					}
 					window.close();

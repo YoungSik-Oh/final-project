@@ -20,23 +20,23 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>사진</th>
+					<th>상품 이미지</th>
 					<th>상품 제목</th>
 					<th>상품 판매자</th>
 					<th>상품가격</th>
 					<th>등록일자</th>
-					<th>지우기</th>
+					<th>삭제</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="tmp" items="${productList }">
 					<tr>
-						<td>${tmp.orgFileName}</td>
+						<td><img src="${pageContext.request.contextPath }/upload/${tmp.saveFileName}" style="width : 150px; height : 150px"/></td>
 						<td><a href="${pageContext.request.contextPath }/product/productdetail.do?pNo=${tmp.pNo}">${tmp.pTitle}</a></td>
 						<td>${tmp.id }</td>
-						<td>${tmp.pPrice}</td>
+						<td>${tmp.pPrice}원</td>
 						<td>${tmp.pRegdate}</td>
-						<td><a href="${pageContext.request.contextPath }/product/delete.do?pNo=${tmp.pNo }" id="del">지우기</a></td>
+						<td><a href="${pageContext.request.contextPath }/product/delete.do?pNo=${tmp.pNo }" id="del" class="btn btn-outline-danger">삭제</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
