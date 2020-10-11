@@ -3,9 +3,13 @@ package com.team4.acornshop;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.team4.acornshop.dto.ProductDto;
+import com.team4.acornshop.service.CategoryService;
 import com.team4.acornshop.service.NoticeService;
 
 
@@ -13,10 +17,14 @@ import com.team4.acornshop.service.NoticeService;
 public class HomeController {
 	@Autowired
 	private NoticeService noticeService;
+	@Autowired
+	private CategoryService categoryService;
 	
 	@RequestMapping("/main")
-	public String home(HttpServletRequest request) {
+	public String home(HttpServletRequest request, ProductDto dto) {
 		noticeService.getList(request);
+		
+		categoryService.homeCategoryList(dto, request);
 		return "main";
 	}
 	

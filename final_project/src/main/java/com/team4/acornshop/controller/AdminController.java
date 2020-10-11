@@ -76,5 +76,15 @@ public class AdminController {
 		Map<String ,Object> map = adminService.addUsers(dto);
 		return map;
 	}
+	
+	//관리자 페이지에서 회원 글 목록 보기
+	@RequestMapping("/admin/openUserProduct")
+	public ModelAndView openUserProduct(ModelAndView m, HttpServletRequest request, String id) {
+		
+		adminService.userAdminGetList(m, request, id);
+		m.setViewName("admin/openUserProduct");
+		return m;
+		
+	}
 }
 
