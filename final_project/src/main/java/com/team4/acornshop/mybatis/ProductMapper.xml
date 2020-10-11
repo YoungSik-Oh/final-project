@@ -18,7 +18,7 @@
             FROM product
             where id = #{id}
             ORDER BY pNo ASC) result1)
-      WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
+       WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
 	</select>
    
    <select id="admingetCount" parameterType="com.team4.acornshop.dto.ProductDto" resultType="int">
@@ -54,4 +54,15 @@
 			pShipping=#{pShipping}, pIsUsed=#{pIsUsed}, pChange=#{pChange}, pContents=#{pContents}
 		WHERE pNo=#{pNo}
 	</update>
+	<select id="getList2"
+		parameterType="com.team4.acornshop.dto.ProductDto"
+		resultType="com.team4.acornshop.dto.ProductDto">
+		SELECT saveFileName, pTitle, pContents, pPrice
+		FROM Product
+		<choose>
+			<when test="pTitle != null">
+				WHERE pTitle LIKE '%'||#{pTitle}||'%'
+			</when>
+		</choose>
+	</select>
 </mapper> 

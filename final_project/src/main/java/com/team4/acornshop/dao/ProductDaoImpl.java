@@ -58,4 +58,9 @@ public class ProductDaoImpl implements ProductDao{
 			session.update("product.update", dto);
 		
 	}
+
+	@Override
+	public List<ProductDto> getList2(ProductDto dto) {
+		return session.selectList("product.getList2", dto);
+	}
 }

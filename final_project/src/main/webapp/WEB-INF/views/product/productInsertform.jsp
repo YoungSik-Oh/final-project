@@ -22,15 +22,15 @@
          <input type="file" name="myFile" id="myFile"/>
       </div>
       <div>
-      	  <label for="pCategory"><b>카테고리</b></label>
-	      <select class="form-control" name="pCategory" id="pCategory">
-	      	<option value="">카테고리를 선택</option>
-	      	<option value="a">a</option>
-	      	<option value="b">b</option>
-	      	<option value="c">c</option>
-	      	<option value="d">d</option>
-	      	<option value="e">e</option>
-	      </select>
+           <label for="pCategory"><b>카테고리</b></label>
+         <select class="form-control" name="pCategory" id="pCategory">
+            <option value="">카테고리를 선택</option>
+            <option value="a">남성의류</option>
+            <option value="b">여성의류</option>
+            <option value="c">헬스/건강식품</option>
+            <option value="d">전자기기</option>
+            <option value="e">기타 잡화</option>
+         </select>
       </div>
       <!-- 상품가격 -->
       <div>

@@ -175,7 +175,39 @@ public class ProductServiceImpl implements ProductService {
 		
 	}
 
+	public void getList2(HttpServletRequest request, ModelAndView m) {
+		/*
+		 * 검색 키워드에 관련된 처리
+		 */
+		String keyword = request.getParameter("keyword"); // 검색 키워드
+		String condition = request.getParameter("condition"); // 검색 조건
+		if (keyword == null) {// 전달된 키워드가 없다면
+			keyword = ""; // 빈 문자열을 넣어준다.
+			condition = "";
+		}
+		// 인코딩된 키워드를 미리 만들어 둔다.
+		String encodedK = URLEncoder.encode(keyword);
+
+		// 검색 키워드와 startRowNum, endRowNum 을 담을 FileDto 객체 생성
+		ProductDto dto = new ProductDto();
+
+		if (!keyword.equals("")) { // 만일 키워드가 넘어온다면
+			if (condition.equals("a")) {
+				// 검색 키워드를 FileDto 객체의 필드에 담는다.
+				dto.setpTitle(keyword);
+			} else if (condition.equals("b")) {
+				dto.setpTitle(keyword);
+			} else if (condition.equals("c")) {
+				dto.setpTitle(keyword);
+			} else if (condition.equals("d")) {
+				dto.setpTitle(keyword);
+			}
+		}
+
+		// 카페글 목록 얻어오기
+		List<ProductDto> list = productDao.getList2(dto);
+
+		m.addObject("plist", list);
+	}
 	
 }
-
-

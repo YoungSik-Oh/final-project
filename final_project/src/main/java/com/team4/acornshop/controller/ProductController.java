@@ -63,5 +63,11 @@ public class ProductController {
 		return m;
 	}
 	
-	
+	@RequestMapping("/product/searchProduct")
+	public ModelAndView searchProduct(ModelAndView m, HttpServletRequest request) {
+		productService.getList2(request,m);
+		
+		m.setViewName("product/searchProduct");
+		return m;
+	}
 }

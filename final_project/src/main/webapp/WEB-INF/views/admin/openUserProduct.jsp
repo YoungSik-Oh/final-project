@@ -41,7 +41,7 @@
 						<tr>
 					      <th scope="row">#</th>
 					      <td>${tmp.pNo }</td>
-					      <td>${tmp.pTitle }</td>
+					      <td><a target="_blank" href="${pageContext.request.contextPath }/product/productdetail.do?pNo=${tmp.pNo }" style="color : black;">${tmp.pTitle }</a></td>
 					      <td>${tmp.pRegdate }</td>
 					    </tr>
 					</c:forEach>
@@ -70,10 +70,6 @@
 		</div>
 	</div>
 	<script>
-		console.log("startPageNum : ${startPageNum } : ");
-		console.log("endPageNum : ${endPageNum } : ");
-		console.log("totalPageCount : ${totalPageCount} : ");
-		console.log("pageNum : ${pageNum} : ");
 	</script>
 </body>
 </html>

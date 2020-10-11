@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="category">
+	<select id="categoryGetList" parameterType="com.team4.acornshop.dto.ProductDto" resultType="com.team4.acornshop.dto.ProductDto">
+		SELECT *
+         FROM
+         (SELECT result1.*, ROWNUM AS rnum
+         FROM
+            (SELECT *
+            FROM product
+            where pCategory = #{pCategory}
+            ORDER BY pRegdate DESC) result1)
+        WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
+	</select>
+	
+	<select id="categoryGetCount" parameterType="com.team4.acornshop.dto.ProductDto" resultType="int">
+      SELECT NVL(MAX(ROWNUM), 0)
+      FROM product
+      WHERE pCategory = #{pCategory}
+   </select>
+   
+   <select id="homeCategoryList" parameterType="com.team4.acornshop.dto.ProductDto" resultType="com.team4.acornshop.dto.ProductDto">
+		SELECT *
+         FROM
+         (SELECT result1.*, ROWNUM AS rnum
+         FROM
+            (SELECT *
+            FROM product
+            ORDER BY pRegdate DESC) result1)
+        WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
+	</select>
+	
+	<select id="homeCategoryGetCount" resultType="int">
+      SELECT NVL(MAX(ROWNUM), 0)
+      FROM product
+   </select>
+</mapper>
