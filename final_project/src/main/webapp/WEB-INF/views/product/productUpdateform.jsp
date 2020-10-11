@@ -11,37 +11,37 @@
 <%@ include file="/include/header.jsp" %>
 <body>
 <div class="container">
-   <form action="upload.do" method="post" enctype="multipart/form-data">
+   <form action="update.do" method="post" enctype="multipart/form-data">
    
       <div class="form-group">
          <label for="pTitle"><b>제목(설명)</b></label>
-         <input class="form-control" type="text" name="pTitle" id="pTitle"/>
+         <input class="form-control" type="text" name="pTitle" id="pTitle" value="${productdetail.pTitle}"/>
       </div>
       <div class="form-group">
          <label for="myFile">첨부 파일</label><br/>
-         <input type="file" name="myFile" id="myFile"/>
+         <input type="file" name="myFile" id="myFile" value="${productdetail.saveFileName}"/>
       </div>
       <div>
-           <label for="pCategory"><b>카테고리</b></label>
-         <select class="form-control" name="pCategory" id="pCategory">
-            <option value="">카테고리를 선택</option>
-            <option value="a">남성의류</option>
-            <option value="b">여성의류</option>
-            <option value="c">헬스/건강식품</option>
-            <option value="d">전자기기</option>
-            <option value="e">기타 잡화</option>
-         </select>
+      	  <label for="pCategory"><b>카테고리</b></label>
+	      <select class="form-control" name="pCategory" id="pCategory" >
+	      	<option value="">카테고리를 선택</option>
+	      	<option value="a">a</option>
+	      	<option value="b">b</option>
+	      	<option value="c">c</option>
+	      	<option value="d">d</option>
+	      	<option value="e">e</option>
+	      </select>
       </div>
       <!-- 상품가격 -->
       <div>
           <label for="pPrice"></label>
-          <input type="number" min="0" inputmode="numeric" pattern="[0-9]*" placeholder="숫자만 입력해 주세요." id="pPrice" name="pPrice" />
+          <input type="number" min="0" inputmode="numeric" pattern="[0-9]*" placeholder="숫자만 입력해 주세요." id="pPrice" name="pPrice" value="${productdetail.pPrice}"/>
           	<b>원</b>
       </div>
       <!-- 배송비 -->
       <div>
          <label for="pShipping" ><b>배송비 포함</b></label>
-         <input id="pShipping" type="checkbox" name="pShipping" id="pShipping" value="pShipping" />
+         <input id="pShipping" type="checkbox" name="pShipping" id="pShipping" value="pShipping" "/>
       </div>
       <div><b>중고 여부</b>
          <div>
@@ -63,10 +63,10 @@
       <!-- 상품소개 -->
       <div>
           <label for="pContents"><b>상품 설명</b></label>
-          <textarea class="form-control" placeholder="상품 설명을 입력해주세요." rows="5" cols="50" id="pContents" name="pContents"></textarea>
+          <textarea class="form-control" placeholder="상품 설명을 입력해주세요." rows="5" cols="50" id="pContents" name="pContents">${productdetail.pContents}</textarea>
       </div>
       <a  target="_blank" href="prohibit.do">거래금지품목</a>
-      <button class="btn btn-outline-primary"  type="submit">업로드</button>
+      <button class="btn btn-outline-primary"  type="submit">수정하기</button>
    </form>
 </div>
  <%@ include file="/include/footer.jsp" %>
