@@ -19,7 +19,7 @@ public class CouponController {
 	private CouponService couponService;
 	
 	@RequestMapping("/coupon/couponInsertform")
-	public String couponInsertform() {
+	public String couponform() {
 		return "coupon/couponInsertform";
 	}
 

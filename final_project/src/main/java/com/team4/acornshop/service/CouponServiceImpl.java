@@ -22,7 +22,7 @@ public class CouponServiceImpl implements CouponService {
 	String id=(String)request.getSession().getAttribute("id");
 	
 	dto.setId(id);
-	
+
 	couponDao.insert(dto);
 	v.addObject("dto", dto);
 	

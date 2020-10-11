@@ -4,6 +4,6 @@
 	<insert id="insert" parameterType="com.team4.acornshop.dto.CouponDto">
 		INSERT INTO coupon
  		(cNo, cSerial_Number, cName, cDiscount_Amount, id, cIsUsed, cRegdate, cExpiration_Date) 
- 		VALUES(coupon_seq.NEXTVAL, #{coupon_serial_number},#{coupon_name},#{id},#{coupon_isused},SYSDATE,SYSDATE+180) 
+ 		VALUES(coupon_seq.NEXTVAL, #{cSerial_Number}, #{cName}, #{cDiscount_Amount}, #{id}, #{cIsUsed}, SYSDATE, SYSDATE+180) 
 	</insert>
 </mapper> 
