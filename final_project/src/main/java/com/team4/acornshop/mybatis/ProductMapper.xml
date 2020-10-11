@@ -48,4 +48,21 @@
 		DELETE FROM product
 		WHERE pNo=#{pNo}
 	</delete>
+	<update id="update">
+		UPDATE product
+		SET pTitle=#{pTitle},  orgFileName=#{orgFileName}, saveFileName=#{saveFileName}, pPrice=#{pPrice}, pCategory=#{pCategory}, 
+			pShipping=#{pShipping}, pIsUsed=#{pIsUsed}, pChange=#{pChange}, pContents=#{pContents}
+		WHERE pNo=#{pNo}
+	</update>
+	<select id="getList2"
+		parameterType="com.team4.acornshop.dto.ProductDto"
+		resultType="com.team4.acornshop.dto.ProductDto">
+		SELECT saveFileName, pTitle, pContents, pPrice
+		FROM Product
+		<choose>
+			<when test="pTitle != null">
+				WHERE pTitle LIKE '%'||#{pTitle}||'%'
+			</when>
+		</choose>
+	</select>
 </mapper> 

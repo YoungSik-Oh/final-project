@@ -39,6 +39,26 @@
 	    -webkit-box-align: center;
 	    align-items: center;
 	}
+	
+	 .cygbOi h1 {
+	    font-size: 30px;
+	    line-height: 1.2;
+	    letter-spacing: -2px;
+	    text-align: center;
+	    font-weight: 600;
+	}
+
+		.cygbOi h1 b {
+		    color: rgb(255, 80, 88);
+		    font-weight: 600;
+		}
+		
+	.cygbOi h2 {
+		margin-top: 30px;
+		font-size: 16px;
+		color: rgb(102, 102, 102);
+	}
+	
 	.ixslbt {
     background-image: url(https://image.freepik.com/free-vector/handshake-icon-in-flat-style_169241-482.jpg);
     background-position: center center;
@@ -47,7 +67,7 @@
     width: 230px;
     height: 93px;
     }
-    
+	
     .fXPwwH {
     padding: 0px 30px;
     list-style: none;
@@ -138,6 +158,8 @@
     height: 87px;
     margin-right: 10px;
 	}
+	
+	
 </style>
 <body>
 <!-- Top Contents -->

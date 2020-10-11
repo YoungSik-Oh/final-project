@@ -51,4 +51,24 @@ public class ProductController {
 		return mView;
 	}
 	
+	@RequestMapping("/product/productUpdateform")
+	public ModelAndView productupdateform(ModelAndView m, HttpServletRequest request) {
+		productService.getDetail(request);
+		m.setViewName("product/productUpdateform");
+		return m;
+	}
+	@RequestMapping("/product/update")
+	public ModelAndView update(ModelAndView m, HttpServletRequest request,ProductDto dto) {
+		productService.updateContent(dto, request, m);
+		m.setViewName("product/update");
+		return m;
+	}
+	
+	@RequestMapping("/product/searchProduct")
+	public ModelAndView searchProduct(ModelAndView m, HttpServletRequest request) {
+		productService.getList2(request,m);
+		
+		m.setViewName("product/searchProduct");
+		return m;
+	}
 }

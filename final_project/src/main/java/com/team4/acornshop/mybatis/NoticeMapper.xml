@@ -36,7 +36,7 @@
 		WHERE nNo=#{nNo}
 	</update> 
 	<select id="getCount" parameterType="noticeDto" resultType="int">
-      SELECT NVL(MAX(ROWNUM), 0)
-      FROM notice
+		SELECT NVL(MAX(ROWNUM), 0)
+		FROM notice
 	</select>
 </mapper>

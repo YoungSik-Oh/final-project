@@ -12,4 +12,6 @@ public interface ProductDao {
 	public int getCount();
 	public ProductDto getData(int pNo);
 	public void delete(int pNo);
+	public void update(ProductDto dto);
+	public List<ProductDto> getList2(ProductDto dto); //검색목록
 }
