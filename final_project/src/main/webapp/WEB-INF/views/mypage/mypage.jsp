@@ -48,7 +48,7 @@
 				<div class="card">
 					<div class="card-body">
 						<h5 class="card-title">
-							<a href="cart.do">장바구니</a>
+							<a href="${pageContext.request.contextPath}/cart/cart.do">장바구니</a>
 						</h5>
 						<p class="card-text">장바구니에 담긴 내용을 확인 할 수 있습니다.</p>
 					</div>

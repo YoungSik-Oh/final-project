@@ -58,7 +58,9 @@
 		        <div class="col-md-3">
 		          <div class="card mb-4 shadow-sm">
 		          	<div class="card-img-top">
-		          		<img src="${pageContext.request.contextPath }/upload/${tmp.saveFileName}" style="width : 255px; height : 250px;">
+		          		<a href="${pageContext.request.contextPath }/product/productdetail.do?pNo=${tmp.pNo}">
+		          			<img src="${pageContext.request.contextPath }/upload/${tmp.saveFileName}" style="width : 255px; height : 250px;">
+		          		</a>
 		          	</div>
 		            <div class="card-body">
 		              <div class="card-text">
@@ -68,7 +70,7 @@
 		              <div class="d-flex justify-content-between align-items-center">
 		                <div class="btn-group">
 		                  <a type="button" class="btn btn-sm btn-outline-primary"style="display : inline-block; margin-right : 10px;">구입하기</a>
-		                  <a type="button" class="btn btn-sm btn-outline-info">장바구니</a>
+		                  <a type="button" class="btn btn-sm btn-outline-info" href="${pageContext.request.contextPath }/cart/insert.do?pNo=${tmp.pNo}&pTitle=${tmp.pTitle}&pPrice=${tmp.pPrice}&saveFileName=${tmp.saveFileName}">장바구니</a>
 		                </div>
 		              </div>
 		            </div>

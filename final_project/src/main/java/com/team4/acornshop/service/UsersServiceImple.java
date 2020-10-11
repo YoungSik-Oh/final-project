@@ -47,28 +47,31 @@ public class UsersServiceImple implements UsersService{
 		//로그인을 하기 위해 미리 암호화 해서 넣어둔 비밀번호와
 		//입력한 비밀번호를 대조해서 true가 나오면 로그인을 할 수 있게 한다.
 		UsersDto dbDto = usersDao.getData(dto.getId());
+
 		if(dbDto != null) {
 			String dbPwd = dbDto.getPwd();
 			String inputPwd = dto.getPwd();
 			isValid = BCrypt.checkpw(inputPwd, dbPwd);
-		}
-		
-		//admin 페이지에서 정지 먹은 회원은 disabled라는 칼럼에 yes값이 들어가 있다.
-		//정보를 가져왔을 때 해당 로그인 id에 yes값이 있으면 session에 isPause 값을 저장해준다.
-		String isPause = dbDto.getDisabled();
-		
-		if(isValid) {
-			session.setAttribute("id", dto.getId());
-			m.addObject("isValid", isValid);
-			//관리자 정보도 작업한다.
-			String isAdmin = dbDto.getIsadmin();
-	
-			if(isAdmin != null) {
-				session.setAttribute("isAdmin", isAdmin);
-			}
 			
-			if(isPause != null) {
-				session.setAttribute("isPause", isPause);
+			//admin 페이지에서 정지 먹은 회원은 disabled라는 칼럼에 yes값이 들어가 있다.
+			//정보를 가져왔을 때 해당 로그인 id에 yes값이 있으면 session에 isPause 값을 저장해준다.
+			String isPause = dbDto.getDisabled();
+			
+			if(isValid) {
+				session.setAttribute("id", dto.getId());
+				m.addObject("isValid", isValid);
+				//관리자 정보도 작업한다.
+				String isAdmin = dbDto.getIsadmin();
+		
+				if(isAdmin != null) {
+					session.setAttribute("isAdmin", isAdmin);
+				}
+				
+				if(isPause != null) {
+					session.setAttribute("isPause", isPause);
+				}
+			}else {
+				m.addObject("isValid", isValid);
 			}
 		}else {
 			m.addObject("isValid", isValid);
