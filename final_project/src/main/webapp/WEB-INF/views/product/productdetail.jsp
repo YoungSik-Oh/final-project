@@ -40,7 +40,7 @@
 	<ul class="list-group">
 	  <li class="list-group-item"></li>
 	  <li class="list-group-item">${productdetail.pContents }</li>
-	</<ul></ul>>
+	</ul>
 
 <%@ include file="/include/footer.jsp" %>
 </div>
