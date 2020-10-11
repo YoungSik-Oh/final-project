@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +27,7 @@
 				<input type="text" class="form-control" name="cDiscount_Amount" id="cDiscount_Amount" placeholder="숫자만 입력해 주세요"/>
 			</div>
 			<div class="form-group">
-				<input type="hidden" class="form-control" name="id" id="id" value="0"/>
+				<input type="hidden" class="form-control" name="cIsUsed" id="cIsUsed" value="0"/>
 			</div>
 			<div class="form-group">
 				<p class="h5 text-danger">※ 등록된 쿠폰의 기본 유효기간은 발급일로부터 180일 까지 입니다.</p>

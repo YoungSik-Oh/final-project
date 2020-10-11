@@ -11,9 +11,9 @@ public class CouponDto {
 	private String cExpiration_Date; // 쿠폰 만료일자
 	
 	public CouponDto() {}
-	
-	public CouponDto(int cNo, String cSerial_Number, String cName, String cDiscount_Amount, String id,
-			String cIsUsed, String cRegdate, String cExpiration_Date) {
+
+	public CouponDto(int cNo, String cSerial_Number, String cName, String cDiscount_Amount, String id, String cIsUsed,
+			String cRegdate, String cExpiration_Date) {
 		super();
 		this.cNo = cNo;
 		this.cSerial_Number = cSerial_Number;
@@ -88,5 +88,7 @@ public class CouponDto {
 	public void setcExpiration_Date(String cExpiration_Date) {
 		this.cExpiration_Date = cExpiration_Date;
 	}
-
+	
+	
+	
 }

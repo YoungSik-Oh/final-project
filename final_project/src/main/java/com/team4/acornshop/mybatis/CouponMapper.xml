@@ -3,7 +3,7 @@
 <mapper namespace="coupon">
 	<insert id="insert" parameterType="com.team4.acornshop.dto.CouponDto">
 		INSERT INTO coupon
- 		(cNo, cSerial_Number, cName, cDiscount_Amount, id, cIsUsed, cRegdate, cExpiration_Date) 
- 		VALUES(coupon_seq.NEXTVAL, #{cSerial_Number}, #{cName}, #{cDiscount_Amount}, #{id}, #{cIsUsed}, SYSDATE, SYSDATE+180) 
+ 		(cNo, id, cSerial_Number, cName, cDiscount_Amount, cIsUsed, cRegdate, cExpiration_Date) 
+ 		VALUES(coupon_seq.NEXTVAL, #{id, jdbcType=VARCHAR}, #{cSerial_Number, jdbcType=VARCHAR}, #{cName, jdbcType=VARCHAR}, #{cDiscount_Amount, jdbcType=VARCHAR}, #{cIsUsed, jdbcType=VARCHAR}, SYSDATE, SYSDATE+180) 
 	</insert>
 </mapper> 
