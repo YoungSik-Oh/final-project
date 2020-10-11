@@ -6,6 +6,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAliases >
 		<typeAlias type="com.team4.acornshop.notice.dto.NoticeDto"
 			alias="noticeDto"/>	
+			
+		<typeAlias type="com.team4.acornshop.dto.CartDto" alias="cartDto"/>
 	</typeAliases>
 	
   	<mappers>
@@ -14,5 +16,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   		<mapper resource="com/team4/acornshop/mybatis/adminMapper.xml"/>
 		<mapper resource="com/team4/acornshop/mybatis/ProductMapper.xml"/>
 		<mapper resource="com/team4/acornshop/mybatis/CategoryMapper.xml"/>
+		
+		<mapper resource="com/team4/acornshop/mybatis/CartMapper.xml" />
   	</mappers>
 </configuration>
