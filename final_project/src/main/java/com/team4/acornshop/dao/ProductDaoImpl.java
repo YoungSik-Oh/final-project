@@ -22,9 +22,7 @@ public class ProductDaoImpl implements ProductDao{
 	}
 
 	@Override
-
 	public List<ProductDto> userAdminGetList(ProductDto dto) {
-		
 		return session.selectList("product.userAdminGetList", dto);
 	}
 
@@ -38,20 +36,29 @@ public class ProductDaoImpl implements ProductDao{
    public int getCount(ProductDto dto) {
       return session.selectOne("product.admingetCount", dto);
    }
-
+   
 	@Override
 	public int getCount() {
 		return session.selectOne("product.getCount");
 	}
-
+	
 	@Override
 	public ProductDto getData(int pNo) {
 		return session.selectOne("product.getData", pNo);
 	}
+
+	@Override
+	public void delete(int pNo) {
+			session.delete("product.delete", pNo);
+	}
 	
 	@Override
+	public void update(ProductDto dto) {
+			session.update("product.update", dto);	
+	}
+
+	@Override
 	public List<ProductDto> getList2(ProductDto dto) {
-		// TODO Auto-generated method stub
 		return session.selectList("product.getList2", dto);
 	}
 }

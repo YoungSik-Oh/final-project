@@ -11,9 +11,10 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	
   	<mappers>
   	<mapper resource="com/team4/acornshop/mybatis/CartMapper.xml" />
-		<mapper resource="com/team4/acornshop/mybatis/ProductMapper.xml" />
   		<mapper resource="com/team4/acornshop/mybatis/UsersMapper.xml"/>
   		<mapper resource="com/team4/acornshop/mybatis/NoticeMapper.xml"/>
   		<mapper resource="com/team4/acornshop/mybatis/adminMapper.xml"/>
+		<mapper resource="com/team4/acornshop/mybatis/ProductMapper.xml"/>
+		<mapper resource="com/team4/acornshop/mybatis/CategoryMapper.xml"/>
   	</mappers>
 </configuration>

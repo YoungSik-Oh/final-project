@@ -41,8 +41,7 @@ pRegdate DATE,-- 등록일자
 orgFileName VARCHAR2(100),
 saveFileName VARCHAR2(100),
 fileSize NUMBER,
-pWriter VARCHAR2(50),
-fileSize NUMBER
+pWriter VARCHAR2(50),	
 );
 
 CREATE SEQUENCE prd_seq;

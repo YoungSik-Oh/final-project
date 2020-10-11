@@ -114,7 +114,9 @@
                <div class="col-md-3">
                    <div class="card mb-4 shadow-sm">
                       <div class="card-img-top">
-                         <img src="${pageContext.request.contextPath }/upload/${tmp.saveFileName}" style="width : 248px; height : 250px;">
+	                      <a href="${pageContext.request.contextPath }/product/productdetail.do?pNo=${tmp.pNo}">
+	                         <img src="${pageContext.request.contextPath }/upload/${tmp.saveFileName}" style="width : 248px; height : 250px;">
+	                      </a>
                       </div>
                      <div class="card-body">
                        <div class="card-text">

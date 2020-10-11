@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!-- Footer Contents -->
 <br/>
-<div class="container text-center">
+<div class="container text-center" style=" border-top: 2px solid rgb(30, 29, 41);">
 
 <table class="table table-borderless ">
   <thead>
