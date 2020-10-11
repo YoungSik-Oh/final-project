@@ -52,4 +52,10 @@ public class ProductDaoImpl implements ProductDao{
 			session.delete("product.delete", pNo);
 		
 	}
+
+	@Override
+	public void update(ProductDto dto) {
+			session.update("product.update", dto);
+		
+	}
 }

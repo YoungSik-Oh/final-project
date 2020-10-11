@@ -48,4 +48,10 @@
 		DELETE FROM product
 		WHERE pNo=#{pNo}
 	</delete>
+	<update id="update">
+		UPDATE product
+		SET pTitle=#{pTitle},  orgFileName=#{orgFileName}, saveFileName=#{saveFileName}, pPrice=#{pPrice}, pCategory=#{pCategory}, 
+			pShipping=#{pShipping}, pIsUsed=#{pIsUsed}, pChange=#{pChange}, pContents=#{pContents}
+		WHERE pNo=#{pNo}
+	</update>
 </mapper> 

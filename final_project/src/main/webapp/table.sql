@@ -42,7 +42,6 @@ orgFileName VARCHAR2(100),
 saveFileName VARCHAR2(100),
 fileSize NUMBER,
 pWriter VARCHAR2(50),
-fileSize NUMBER
 );
 
 CREATE SEQUENCE prd_seq;

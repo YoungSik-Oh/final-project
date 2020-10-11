@@ -11,6 +11,9 @@
 <%@ include file="/include/header.jsp" %>
 <div class="container">
 <hr/>
+	
+	 <a href="${pageContext.request.contextPath }/product/productUpdateform.do?pNo=${productdetail.pNo}" >수정하기</a>
+	 
 	<div class="row no-gutters bg-light position-relative">
 	  <div class="col-md-6 mb-md-0 p-md-4">
 	      <img src="${pageContext.request.contextPath }/upload/${productdetail.saveFileName}" class="d-block w-100" alt="...">
@@ -31,20 +34,12 @@
 	      <div class="col-sm">
 			상품정보
 	      </div>
-	      <div class="col-sm">
-			상품후기
-	      </div>
-	      <div class="col-sm">
-			상품 문의
-	      </div>
 	    </div>
     </div>
 	<hr/>
 	<ul class="list-group">
 	  <li class="list-group-item"></li>
 	  <li class="list-group-item">${productdetail.pContents }</li>
-	  <li class="list-group-item">상품 문의</li>
-	  <li class="list-group-item">판매자의 다른 상품</li>
 	</ul>
 
 <%@ include file="/include/footer.jsp" %>
