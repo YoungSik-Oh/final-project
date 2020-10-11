@@ -6,45 +6,120 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath }/resources/css/bootstrap-grid.css" />
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+	integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+	crossorigin="anonymous"></script>
+<style>
+div {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+}
+#notice {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.kPQrGe {
+	width: 196px;
+	margin-right: 11px;
+	margin-bottom: 11px;
+}
+
+.fACOIQ {
+	position: relative;
+	width: 100%;
+	height: 194px;
+}
+
+.kmMbIN {
+	padding: 15px 10px;
+	height: 80px;
+}
+
+.kmMbIN jKZagR {
+	position: relative;
+	font-size: 14px;
+	padding-bottom: 20px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.kmMbIN kZVnBR {
+	display: flex;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	align-items: center;
+	height: 20px;
+}
+
+.lbKFnR {
+	margin-bottom: 40px;
+	display: flex;
+}
+
+.bIBRdK {
+	margin: 50px 0px 24px;
+	width: 100%;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	align-items: center;
+}
+ 
+.lTHfT {
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	color: red;
+	height: 100px;
+    font-size: 26px;
+    border-bottom: 2px solid rgb(30, 29, 41);
+}
+}
+
+</style>
 </head>
 <body>
-	<c:forEach var="tmp" items="${plist }">
-		<div class="row mt-3">
-			<div class="col-3">
-				<div class="card">
-					<img class="card-img-top" ${dto.saveFileName }>
-					<div class="card-body">
-						<h5 class="card-title">${tmp.pTitle }</h5>
-						<p class="card-text">${tmp.pContents }</p>
-						<p class="card-text">${tmp.pPrice }</p>
-						<a href="#" class="btn btn-primary">구매하기</a>
+	<!-- Top Contents -->
+	<%@ include file="/include/header.jsp" %>
+	<!-- Top Contents End -->
+
+	 <div class="container" style="min-width: 1236px; width: 1024px;">
+		<div class="bIBRdK">
+			<div class="lTHfT">검색결과                                                                                                                 
+			</div>
+		</div>
+		<c:forEach var="tmp" items="${plist }">
+			<div style="float: left; width: 25%; text-align: center;">
+				<div class="row mt-3">
+					<div class="col-3">
+						<div class="kPQrGe">
+							<img class="fACOIQ"
+								src="${pageContext.request.contextPath }/upload/${tmp.saveFileName }">
+							${tmp.saveFileName }
+							<div class="jKZagR">${tmp.pTitle }</div>
+							<!-- <p class="card-text">${tmp.pContents }</p> -->
+							<div class="kZVnBR">${tmp.pPrice }</div>
+							<div class="btn btn-primary">구매하기</div>
+						</div>
 					</div>
 				</div>
 			</div>
-	</c:forEach>
-	<div class="page-display">
-		<ul class="pagination pagination-sm">
-			<c:if test="${startPageNum ne 1 }">
-				<li class="page-item"><a class="page-link"
-					href="list.do?pageNum=${startPageNum-1 }&condition=${condition }&keyword=${encodedK }">Prev</a></li>
-			</c:if>
-			<c:forEach var="i" begin="${startPageNum }" end="${endPageNum }">
-				<c:choose>
-					<c:when test="${i eq pageNum }">
-						<li class="page-item active"><a class="page-link"
-							href="list.do?pageNum=${i }&condition=${condition }&keyword=${encodedK }">${i }</a></li>
-					</c:when>
-					<c:otherwise>
-						<li class="page-item"><a class="page-link"
-							href="list.do?pageNum=${i }&condition=${condition }&keyword=${encodedK }">${i }</a></li>
-					</c:otherwise>
-				</c:choose>
-			</c:forEach>
-			<c:if test="${endPageNum lt totalPageCount }">
-				<li class="page-item"><a class="page-link"
-					href="list.do?pageNum=${endPageNum+1 }&condition=${condition }&keyword=${encodedK }">Next</a></li>
-			</c:if>
-		</ul>
+		</c:forEach>
 	</div>
+	<!-- Footer Contents -->
+	<%@ include file="/include/footer.jsp" %>
+	<!-- Footer Contents End -->
 </body>
 </html>

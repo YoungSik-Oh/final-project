@@ -1,5 +1,7 @@
 package com.team4.acornshop.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -18,5 +20,10 @@ public class ProductDaoImpl implements ProductDao{
 		session.insert("product.insert",dto);
 	}
 	
+	@Override
+	public List<ProductDto> getList3(ProductDto dto) {
+		return session.selectList("product.getList", dto);
+	}
 	
+
 }

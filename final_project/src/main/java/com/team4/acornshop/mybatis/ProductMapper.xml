@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="product">
-	<insert id="insert" parameterType="com.team4.acornshop.dto.ProductDto">
+	<insert id="insert"
+		parameterType="com.team4.acornshop.dto.ProductDto">
 		INSERT INTO product
-		(pNo, pTitle, pPrice, pShipping, pChange, pContents, pCategory, pIsUsed, pRegdate,orgFileName, saveFileName, fileSize)
+		(pNo, pTitle, pPrice, pShipping,
+		pChange, pContents, pCategory, pIsUsed, pRegdate,orgFileName,
+		saveFileName, fileSize)
 		VALUES(prd_seq.NEXTVAL,#{pTitle},#{pPrice},#{pShipping},#{pChange},#{pContents},#{pCategory},#{pIsUsed},SYSDATE,#{orgFileName},#{saveFileName},#{fileSize})
 	</insert>
 
+	<select id="getList"
+		parameterType="com.team4.acornshop.dto.ProductDto"
+		resultType="com.team4.acornshop.dto.ProductDto">
+		SELECT saveFileName, pTitle, pContents, pPrice
+		FROM Product
+		<choose>
+			<when test="pTitle != null">
+				WHERE pTitle LIKE '%'||#{pTitle}||'%'
+			</when>
+		</choose>
+	</select>
 </mapper> 
