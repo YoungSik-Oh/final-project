@@ -1,6 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>      
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<style>
+	.container{
+		margin-top : 20px;
+		margin0bottom : 20px;
+	}
+	
+	.headerA{
+		display : inline-block;
+		margin-right : 5px;
+		margin-bottom : 5px;
+	}
+</style>    
 <!-- Top Contents -->
 		<div class="container">
 			<div class="row">
@@ -25,9 +37,12 @@
 						</c:when>
 						<c:otherwise>
 							<strong>${id }</strong>님
-							<a href="${pageContext.request.contextPath}/mypage/mypage.do" class="text-dark">마이페이지</a>
+							<a href="${pageContext.request.contextPath}/mypage/mypage.do" class="text-dark headerA">마이페이지</a>
 							<a href="javascript:" class="text-danger" id="logout">로그아웃</a><br/>
-							<c:if test="${not empty isAdmin }"><a href="${pageContext.request.contextPath}/admin/main.do">관리자 페이지</a></c:if>
+							<c:if test="${not empty isAdmin }">
+								<a href="${pageContext.request.contextPath}/admin/main.do" class="text-warning headerA">관리자 페이지</a>
+							</c:if>
+							<a href="${pageContext.request.contextPath }/product/productInsertform.do" class="text-info headerA">상품 등록</a>
 						</c:otherwise>
 					</c:choose>	
 				</div>
@@ -46,15 +61,65 @@
 				<a class="navbar-brand" href="#">카테고리</a>
 				<div class="collapse navbar-collapse" id="categorynavigation">
 					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-						<li class="nav-item active"><a class="nav-link" href="#">남성의류</a>
+						<li class="nav-item active">
+							<a class="nav-link" href="${pageContext.request.contextPath }/category/detailPage.do?pCategory=a">
+								<c:choose>
+									<c:when test="${pCategory eq 'a'}">
+										<strong>남성의류</strong>
+									</c:when>
+									<c:otherwise>
+										남성의류
+									</c:otherwise>
+								</c:choose>
+							 </a>
 						</li>
-						<li class="nav-item active"><a class="nav-link" href="#">헬스/건강식품</a>
+						<li class="nav-item active">
+							<a class="nav-link" href="${pageContext.request.contextPath }/category/detailPage.do?pCategory=b">
+								<c:choose>
+									<c:when test="${pCategory eq 'b'}">
+										<strong>여성의류</strong>
+									</c:when>
+									<c:otherwise>
+										여성의류
+									</c:otherwise>
+								</c:choose>
+							</a>
 						</li>
-						<li class="nav-item active"><a class="nav-link" href="#">전자기기</a>
+						<li class="nav-item active">
+							<a class="nav-link" href="${pageContext.request.contextPath }/category/detailPage.do?pCategory=c">
+								<c:choose>
+									<c:when test="${pCategory eq 'c'}">
+										<strong>헬스/건강식품</strong>
+									</c:when>
+									<c:otherwise>
+										헬스/건강식품
+									</c:otherwise>
+								</c:choose>
+							</a>
 						</li>
-						<li class="nav-item active"><a class="nav-link" href="#">여성의류</a>
+						<li class="nav-item active">
+							<a class="nav-link" href="${pageContext.request.contextPath }/category/detailPage.do?pCategory=d">
+								<c:choose>
+									<c:when test="${pCategory eq 'd'}">
+										<strong>전자기기</strong>
+									</c:when>
+									<c:otherwise>
+										전자기기
+									</c:otherwise>
+								</c:choose>
+							</a>
 						</li>
-						<li class="nav-item active"><a class="nav-link" href="#">여성의류</a>
+						<li class="nav-item active">
+							<a class="nav-link" href="${pageContext.request.contextPath }/category/detailPage.do?pCategory=e">
+								<c:choose>
+									<c:when test="${pCategory eq 'e'}">
+										<strong>기타 잡품</strong>
+									</c:when>
+									<c:otherwise>
+										기타 잡품
+									</c:otherwise>
+								</c:choose>
+							</a>
 						</li>
 					</ul>
 				</div>

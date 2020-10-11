@@ -18,7 +18,7 @@
             FROM product
             where id = #{id}
             ORDER BY pNo ASC) result1)
-      WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
+       WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
 	</select>
    
    <select id="admingetCount" parameterType="com.team4.acornshop.dto.ProductDto" resultType="int">
