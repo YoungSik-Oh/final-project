@@ -45,3 +45,17 @@ pWriter VARCHAR2(50),
 );
 
 CREATE SEQUENCE prd_seq;
+
+-- Coupon Table --
+CREATE TABLE coupon(
+cNo NUMBER PRIMARY KEY, -- 쿠폰 아이디 값
+cSerial_Number VARCHAR2(100), -- 쿠폰 일련번호
+cName VARCHAR2(250), -- 쿠폰 명
+cDiscount_Amount VARCHAR2(100), -- 쿠폰 할인액(률)
+cUser VARCHAR2(50), -- 쿠폰 사용자(회원아이디)
+cIsUsed VARCHAR2(10), --쿠폰 사용여부
+cRegdate DATE, -- 쿠폰 등록일자
+cExpiration_Date DATE -- 쿠폰 만료일자
+);
+
+CREATE SEQUENCE coupon_seq;
