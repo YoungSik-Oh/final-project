@@ -3,27 +3,26 @@ package com.team4.acornshop;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.team4.acornshop.dto.ProductDto;
 import com.team4.acornshop.service.NoticeService;
-import com.team4.acornshop.service.ProductService;
 
 
 @Controller
 public class HomeController {
 	@Autowired
 	private NoticeService noticeService;
-	@Autowired
-	private ProductService productService;
 	
-
 	@RequestMapping("/main")
-	public String home(HttpServletRequest request) {
-		productService.getList2(request);
+	public String home(HttpServletRequest request, ProductDto dto) {
 		noticeService.getList(request);
 		return "main";
-	}	
+	}
+	
 	@RequestMapping("/naverLogin")
 	public String naverLogin() {
 		return "naverLogin";

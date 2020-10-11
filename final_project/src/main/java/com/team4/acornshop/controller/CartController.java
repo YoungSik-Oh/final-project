@@ -13,15 +13,12 @@ import org.springframework.web.servlet.ModelAndView;
 import com.team4.acornshop.dto.CartDto;
 import com.team4.acornshop.dto.UsersDto;
 import com.team4.acornshop.service.CartService;
-import com.team4.acornshop.service.UsersService;
 
 @Controller
 public class CartController {
 	@Autowired
 	private CartService cartService;
-	@Autowired
-	private UsersService userService;
-	
+
 	@RequestMapping("/cart/cart")
 	public ModelAndView getlist(ModelAndView mView, HttpServletRequest request, CartDto dto) {
 		cartService.getList(request, dto);
@@ -45,7 +42,6 @@ public class CartController {
 	@RequestMapping("/cart/payment")
 	public ModelAndView getlist2(ModelAndView mView, HttpServletRequest request, CartDto dto) {
 		String id = (String)request.getSession().getAttribute("id");
-		userService.myPage(id, mView);
 		cartService.getList2(request, dto);
 		mView.setViewName("cart/payment");
 		return mView;
@@ -61,7 +57,6 @@ public class CartController {
 	@RequestMapping("/cart/destination")
 	public ModelAndView destination(ModelAndView mView, HttpSession session) {
 		String id = (String)session.getAttribute("id");
-		userService.myPage(id, mView);
 		mView.setViewName("cart/destination");
 		return mView;
 	}
