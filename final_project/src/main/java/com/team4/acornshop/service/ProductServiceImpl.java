@@ -167,8 +167,6 @@ public class ProductServiceImpl implements ProductService {
 		dto.setOrgFileName(orgFileName);
 		dto.setSaveFileName(saveFileName);
 		dto.setFileSize(fileSize);
-		//fileDao 를 이용해서 DB 에 저장하기
-		productDao.insert(dto);
 		//view 페이지에서 사용할 모델 담기 
 		m.addObject("dto", dto);
 		productDao.update(dto);

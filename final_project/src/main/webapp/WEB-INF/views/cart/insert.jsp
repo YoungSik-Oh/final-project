@@ -10,7 +10,7 @@
 <body>
 <script>
 	alert("${id} 님 물건이 장바구니에 담겼어요");
-	location.href="${pageContext.request.contextPath}/main.do";
+	location.href="${pageContext.request.contextPath}/cart/cart.do";
 </script>
 </body>
 </html>
