@@ -39,7 +39,7 @@ public class CartController {
 		System.out.println(dto.getpPrice());
 		dto.setId(id);
 		cartService.insert(dto);
-		return "redirect:../main.do";
+		return "cart/insert";
 	}
 	
 	@RequestMapping("/cart/payment")
